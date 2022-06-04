@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF554686284AD1C1006372BA /* LoginEmailTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF554685284AD1C1006372BA /* LoginEmailTextField.xib */; };
+		EF554688284AD2D3006372BA /* LoginEmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF554687284AD2D3006372BA /* LoginEmailTextField.swift */; };
 		EFCD61732849BCCF00509C0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD61722849BCCF00509C0D /* AppDelegate.swift */; };
 		EFCD61752849BCCF00509C0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD61742849BCCF00509C0D /* SceneDelegate.swift */; };
 		EFCD61772849BCCF00509C0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD61762849BCCF00509C0D /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 		EFCD618A2849BCD100509C0D /* MessageAppWithAssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD61892849BCD100509C0D /* MessageAppWithAssistantTests.swift */; };
 		EFCD61942849BCD100509C0D /* MessageAppWithAssistantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD61932849BCD100509C0D /* MessageAppWithAssistantUITests.swift */; };
 		EFCD61962849BCD100509C0D /* MessageAppWithAssistantUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD61952849BCD100509C0D /* MessageAppWithAssistantUITestsLaunchTests.swift */; };
+		EFFC1AF42849D6C3009C99D8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC1AF32849D6C2009C99D8 /* LoginViewController.swift */; };
+		EFFC1AF62849D86A009C99D8 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC1AF52849D86A009C99D8 /* SignupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF554685284AD1C1006372BA /* LoginEmailTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginEmailTextField.xib; sourceTree = "<group>"; };
+		EF554687284AD2D3006372BA /* LoginEmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailTextField.swift; sourceTree = "<group>"; };
 		EFCD616F2849BCCF00509C0D /* MessageAppWithAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageAppWithAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFCD61722849BCCF00509C0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFCD61742849BCCF00509C0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +55,8 @@
 		EFCD618F2849BCD100509C0D /* MessageAppWithAssistantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessageAppWithAssistantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFCD61932849BCD100509C0D /* MessageAppWithAssistantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAppWithAssistantUITests.swift; sourceTree = "<group>"; };
 		EFCD61952849BCD100509C0D /* MessageAppWithAssistantUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAppWithAssistantUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EFFC1AF32849D6C2009C99D8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EFFC1AF52849D86A009C99D8 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +110,11 @@
 				EFCD61722849BCCF00509C0D /* AppDelegate.swift */,
 				EFCD61742849BCCF00509C0D /* SceneDelegate.swift */,
 				EFCD61762849BCCF00509C0D /* ViewController.swift */,
+				EFFC1AF32849D6C2009C99D8 /* LoginViewController.swift */,
+				EFFC1AF52849D86A009C99D8 /* SignupViewController.swift */,
 				EFCD61782849BCCF00509C0D /* Main.storyboard */,
+				EF554685284AD1C1006372BA /* LoginEmailTextField.xib */,
+				EF554687284AD2D3006372BA /* LoginEmailTextField.swift */,
 				EFCD617B2849BCD100509C0D /* Assets.xcassets */,
 				EFCD617D2849BCD100509C0D /* LaunchScreen.storyboard */,
 				EFCD61802849BCD100509C0D /* Info.plist */,
@@ -233,6 +245,7 @@
 			files = (
 				EFCD617F2849BCD100509C0D /* LaunchScreen.storyboard in Resources */,
 				EFCD617C2849BCD100509C0D /* Assets.xcassets in Resources */,
+				EF554686284AD1C1006372BA /* LoginEmailTextField.xib in Resources */,
 				EFCD617A2849BCCF00509C0D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,8 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFFC1AF42849D6C3009C99D8 /* LoginViewController.swift in Sources */,
 				EFCD61772849BCCF00509C0D /* ViewController.swift in Sources */,
+				EFFC1AF62849D86A009C99D8 /* SignupViewController.swift in Sources */,
 				EFCD61732849BCCF00509C0D /* AppDelegate.swift in Sources */,
+				EF554688284AD2D3006372BA /* LoginEmailTextField.swift in Sources */,
 				EFCD61752849BCCF00509C0D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
