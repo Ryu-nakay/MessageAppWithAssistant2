@@ -1,34 +1,24 @@
 //
-//  LoginViewController.swift
+//  ChatroomListViewController.swift
 //  MessageAppWithAssistant
 //
-//  Created by 中山龍 on 2022/06/03.
+//  Created by 中山龍 on 2022/06/04.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class ChatroomListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
-
-
-   /*
-    // ①storyboardのインスタンス取得
-    let storyboard: UIStoryboard = self.storyboard!
-
-    // ②遷移先ViewControllerのインスタンス取得
-    let nextView = storyboard.instantiateViewController(withIdentifier: "SignupView") as! SignupViewController
-
-    // ③画面遷移
-    self.present(nextView, animated: false, completion: nil)
-    */
-
-
-
     
+    @IBAction func onTapClose(_ sender: Any) {
+        dismiss(animated: false)
+    }
+
     /*
     // MARK: - Navigation
 

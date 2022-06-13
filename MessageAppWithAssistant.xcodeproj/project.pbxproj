@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EF554686284AD1C1006372BA /* LoginEmailTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF554685284AD1C1006372BA /* LoginEmailTextField.xib */; };
-		EF554688284AD2D3006372BA /* LoginEmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF554687284AD2D3006372BA /* LoginEmailTextField.swift */; };
+		EF3251FB284F0FD7001A3263 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3251FA284F0FD7001A3263 /* SettingModel.swift */; };
+		EF3251FD284F132A001A3263 /* InitialSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3251FC284F132A001A3263 /* InitialSettingViewModel.swift */; };
+		EF4BEAB52856CBA100282DC4 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF4BEAB42856CBA100282DC4 /* Signup.storyboard */; };
+		EF55468D284B556E006372BA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF55468C284B556E006372BA /* LoginViewModel.swift */; };
+		EF55468F284B5722006372BA /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF55468E284B5722006372BA /* LoginModel.swift */; };
+		EF554691284B5A6B006372BA /* ChatroomList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF554690284B5A6B006372BA /* ChatroomList.storyboard */; };
+		EF554693284B5A92006372BA /* ChatroomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF554692284B5A92006372BA /* ChatroomListViewController.swift */; };
+		EFB3747A284ED86B001D59AE /* ViewTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB37479284ED86B001D59AE /* ViewTransition.swift */; };
+		EFB37481284EEB05001D59AE /* InitialSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB37480284EEB05001D59AE /* InitialSettingViewController.swift */; };
 		EFCD61732849BCCF00509C0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD61722849BCCF00509C0D /* AppDelegate.swift */; };
 		EFCD61752849BCCF00509C0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD61742849BCCF00509C0D /* SceneDelegate.swift */; };
-		EFCD61772849BCCF00509C0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD61762849BCCF00509C0D /* ViewController.swift */; };
 		EFCD617A2849BCCF00509C0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFCD61782849BCCF00509C0D /* Main.storyboard */; };
 		EFCD617C2849BCD100509C0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFCD617B2849BCD100509C0D /* Assets.xcassets */; };
 		EFCD617F2849BCD100509C0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFCD617D2849BCD100509C0D /* LaunchScreen.storyboard */; };
@@ -20,6 +26,8 @@
 		EFCD61962849BCD100509C0D /* MessageAppWithAssistantUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD61952849BCD100509C0D /* MessageAppWithAssistantUITestsLaunchTests.swift */; };
 		EFFC1AF42849D6C3009C99D8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC1AF32849D6C2009C99D8 /* LoginViewController.swift */; };
 		EFFC1AF62849D86A009C99D8 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC1AF52849D86A009C99D8 /* SignupViewController.swift */; };
+		EFFCAE14284DC6E500831926 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFCAE13284DC6E500831926 /* SignupViewModel.swift */; };
+		EFFCAE17284DCCF200831926 /* UseActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFCAE16284DCCF200831926 /* UseActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,12 +48,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EF554685284AD1C1006372BA /* LoginEmailTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginEmailTextField.xib; sourceTree = "<group>"; };
-		EF554687284AD2D3006372BA /* LoginEmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailTextField.swift; sourceTree = "<group>"; };
+		EF3251FA284F0FD7001A3263 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
+		EF3251FC284F132A001A3263 /* InitialSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSettingViewModel.swift; sourceTree = "<group>"; };
+		EF3251FE284F14F8001A3263 /* UserDefaultsData.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = UserDefaultsData.md; sourceTree = "<group>"; };
+		EF395688284EF91500A694A7 /* ToDo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ToDo.md; sourceTree = "<group>"; };
+		EF4BEAB42856CBA100282DC4 /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
+		EF55468C284B556E006372BA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		EF55468E284B5722006372BA /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		EF554690284B5A6B006372BA /* ChatroomList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatroomList.storyboard; sourceTree = "<group>"; };
+		EF554692284B5A92006372BA /* ChatroomListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomListViewController.swift; sourceTree = "<group>"; };
+		EFB37479284ED86B001D59AE /* ViewTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTransition.swift; sourceTree = "<group>"; };
+		EFB37480284EEB05001D59AE /* InitialSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSettingViewController.swift; sourceTree = "<group>"; };
 		EFCD616F2849BCCF00509C0D /* MessageAppWithAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageAppWithAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFCD61722849BCCF00509C0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFCD61742849BCCF00509C0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EFCD61762849BCCF00509C0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EFCD61792849BCCF00509C0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EFCD617B2849BCD100509C0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFCD617E2849BCD100509C0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +73,8 @@
 		EFCD61952849BCD100509C0D /* MessageAppWithAssistantUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAppWithAssistantUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EFFC1AF32849D6C2009C99D8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EFFC1AF52849D86A009C99D8 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		EFFCAE13284DC6E500831926 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		EFFCAE16284DCCF200831926 /* UseActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseActivityIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +102,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF554689284B5482006372BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EFFC1AF32849D6C2009C99D8 /* LoginViewController.swift */,
+				EFFC1AF52849D86A009C99D8 /* SignupViewController.swift */,
+				EF554692284B5A92006372BA /* ChatroomListViewController.swift */,
+				EFB37480284EEB05001D59AE /* InitialSettingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EF55468A284B5552006372BA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EF55468C284B556E006372BA /* LoginViewModel.swift */,
+				EFFCAE13284DC6E500831926 /* SignupViewModel.swift */,
+				EF3251FC284F132A001A3263 /* InitialSettingViewModel.swift */,
+				EFFCAE15284DCCD700831926 /* Protocols */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EF55468B284B555C006372BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF55468E284B5722006372BA /* LoginModel.swift */,
+				EF3251FA284F0FD7001A3263 /* SettingModel.swift */,
+				EFB3747B284EDC49001D59AE /* Protoclos */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EFB3747B284EDC49001D59AE /* Protoclos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protoclos;
+			sourceTree = "<group>";
+		};
 		EFCD61662849BCCF00509C0D = {
 			isa = PBXGroup;
 			children = (
@@ -107,17 +164,19 @@
 		EFCD61712849BCCF00509C0D /* MessageAppWithAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				EF554689284B5482006372BA /* View */,
+				EF55468A284B5552006372BA /* ViewModel */,
+				EF55468B284B555C006372BA /* Model */,
 				EFCD61722849BCCF00509C0D /* AppDelegate.swift */,
 				EFCD61742849BCCF00509C0D /* SceneDelegate.swift */,
-				EFCD61762849BCCF00509C0D /* ViewController.swift */,
-				EFFC1AF32849D6C2009C99D8 /* LoginViewController.swift */,
-				EFFC1AF52849D86A009C99D8 /* SignupViewController.swift */,
 				EFCD61782849BCCF00509C0D /* Main.storyboard */,
-				EF554685284AD1C1006372BA /* LoginEmailTextField.xib */,
-				EF554687284AD2D3006372BA /* LoginEmailTextField.swift */,
+				EF4BEAB42856CBA100282DC4 /* Signup.storyboard */,
+				EF554690284B5A6B006372BA /* ChatroomList.storyboard */,
 				EFCD617B2849BCD100509C0D /* Assets.xcassets */,
 				EFCD617D2849BCD100509C0D /* LaunchScreen.storyboard */,
 				EFCD61802849BCD100509C0D /* Info.plist */,
+				EF3251FE284F14F8001A3263 /* UserDefaultsData.md */,
+				EF395688284EF91500A694A7 /* ToDo.md */,
 			);
 			path = MessageAppWithAssistant;
 			sourceTree = "<group>";
@@ -139,6 +198,15 @@
 			path = MessageAppWithAssistantUITests;
 			sourceTree = "<group>";
 		};
+		EFFCAE15284DCCD700831926 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EFFCAE16284DCCF200831926 /* UseActivityIndicator.swift */,
+				EFB37479284ED86B001D59AE /* ViewTransition.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,6 +223,8 @@
 			dependencies = (
 			);
 			name = MessageAppWithAssistant;
+			packageProductDependencies = (
+			);
 			productName = MessageAppWithAssistant;
 			productReference = EFCD616F2849BCCF00509C0D /* MessageAppWithAssistant.app */;
 			productType = "com.apple.product-type.application";
@@ -227,6 +297,8 @@
 				Base,
 			);
 			mainGroup = EFCD61662849BCCF00509C0D;
+			packageReferences = (
+			);
 			productRefGroup = EFCD61702849BCCF00509C0D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -245,8 +317,9 @@
 			files = (
 				EFCD617F2849BCD100509C0D /* LaunchScreen.storyboard in Resources */,
 				EFCD617C2849BCD100509C0D /* Assets.xcassets in Resources */,
-				EF554686284AD1C1006372BA /* LoginEmailTextField.xib in Resources */,
 				EFCD617A2849BCCF00509C0D /* Main.storyboard in Resources */,
+				EF4BEAB52856CBA100282DC4 /* Signup.storyboard in Resources */,
+				EF554691284B5A6B006372BA /* ChatroomList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,11 +345,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFFC1AF42849D6C3009C99D8 /* LoginViewController.swift in Sources */,
-				EFCD61772849BCCF00509C0D /* ViewController.swift in Sources */,
+				EF55468F284B5722006372BA /* LoginModel.swift in Sources */,
+				EFB37481284EEB05001D59AE /* InitialSettingViewController.swift in Sources */,
+				EF3251FD284F132A001A3263 /* InitialSettingViewModel.swift in Sources */,
+				EFFCAE14284DC6E500831926 /* SignupViewModel.swift in Sources */,
+				EFB3747A284ED86B001D59AE /* ViewTransition.swift in Sources */,
+				EFFCAE17284DCCF200831926 /* UseActivityIndicator.swift in Sources */,
 				EFFC1AF62849D86A009C99D8 /* SignupViewController.swift in Sources */,
 				EFCD61732849BCCF00509C0D /* AppDelegate.swift in Sources */,
-				EF554688284AD2D3006372BA /* LoginEmailTextField.swift in Sources */,
+				EF3251FB284F0FD7001A3263 /* SettingModel.swift in Sources */,
+				EF55468D284B556E006372BA /* LoginViewModel.swift in Sources */,
 				EFCD61752849BCCF00509C0D /* SceneDelegate.swift in Sources */,
+				EF554693284B5A92006372BA /* ChatroomListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
