@@ -9,6 +9,8 @@ import UIKit
 
 class ChatroomListViewController: UIViewController {
 
+    @IBOutlet weak var roomListTableView: UITableView!
+
     var viewModel = ChatroomListViewModel()
 
     override func viewDidLoad() {
@@ -17,5 +19,33 @@ class ChatroomListViewController: UIViewController {
         navigationItem.title = "Rooms"
 
         self.viewModel.delegate = self
+
+        // アクティビティインジケータの初期化
+        self.viewModel.initActivityIndicatorView()
+
+        // ↓追加　<tableview初期設定>
+        self.roomListTableView.frame = view.frame
+        self.roomListTableView.dataSource = self
+        self.roomListTableView.delegate = self
+        self.roomListTableView.tableFooterView = UIView(frame: .zero)
+        
+
+        self.roomListTableView.register(UINib(nibName: "ChatroomListTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomRoomCell")
     }
+}
+
+extension ChatroomListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.viewModel.roomArray.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomRoomCell", for: indexPath) as! ChatroomListTableViewCell
+        cell.roomNameLabel.text = self.viewModel.roomArray[indexPath.row].roomName
+        return cell
+    }
+}
+
+extension ChatroomListViewController: UITableViewDelegate {
+
 }

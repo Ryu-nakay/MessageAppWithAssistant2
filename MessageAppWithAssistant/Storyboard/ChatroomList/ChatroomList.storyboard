@@ -40,6 +40,9 @@
                             <constraint firstItem="SYW-dX-pIE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="eiz-dG-Wbg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="roomListTableView" destination="SYW-dX-pIE" id="nz5-bg-LkG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
