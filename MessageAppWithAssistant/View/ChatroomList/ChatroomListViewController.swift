@@ -46,8 +46,20 @@ extension ChatroomListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            performSegue(withIdentifier: "ToChatroomSegue", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        performSegue(withIdentifier: "ToChatroomSegue", sender: indexPath.row)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "ToChatroomSegue" {
+            if let nextVC = segue.destination as? ChatroomViewController {
+                let index = sender as? Int
+                nextVC.roomInfo = self.viewModel.roomArray[index!]
+            }
         }
+    }
 }
 
 extension ChatroomListViewController: UITableViewDelegate {

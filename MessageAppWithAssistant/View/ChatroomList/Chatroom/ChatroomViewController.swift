@@ -9,22 +9,19 @@ import UIKit
 
 class ChatroomViewController: UIViewController {
 
+    var roomInfo: RoomItem? {
+        didSet {
+            navigationItem.title = roomInfo!.roomName
+            // チャット内容のゲット
+            self.viewModel.tryToGetChatData(roomId: self.roomInfo!.roomId, start: 0, count: 30)
+        }
+    }
+
+    var viewModel = ChatroomViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "チャット"
-        // Do any additional setup after loading the view.
+        self.viewModel.delegate = self
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
