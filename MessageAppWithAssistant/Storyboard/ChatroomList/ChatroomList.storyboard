@@ -42,11 +42,22 @@
                     </view>
                     <connections>
                         <outlet property="roomListTableView" destination="SYW-dX-pIE" id="nz5-bg-LkG"/>
+                        <segue destination="5dQ-6K-eqh" kind="push" identifier="ToChatroomSegue" id="yWY-Lo-Y2G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-23.188405797101453" y="108.48214285714285"/>
+        </scene>
+        <!--Chatroom-->
+        <scene sceneID="NKy-jO-jth">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Chatroom" id="5dQ-6K-eqh" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Oat-Hz-LHZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wfp-1x-l74" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565" y="108"/>
         </scene>
     </scenes>
     <resources>

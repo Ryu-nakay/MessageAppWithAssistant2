@@ -44,6 +44,10 @@ extension ChatroomListViewController: UITableViewDataSource {
         cell.roomNameLabel.text = self.viewModel.roomArray[indexPath.row].roomName
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            performSegue(withIdentifier: "ToChatroomSegue", sender: nil)
+        }
 }
 
 extension ChatroomListViewController: UITableViewDelegate {

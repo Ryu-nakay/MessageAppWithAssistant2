@@ -21,7 +21,7 @@ class ChatroomListViewModel: UseActivityIndicator {
             self.chatroomList.$roomlist
                 .sink(receiveValue: { receiveList in
                     self.roomArray = receiveList
-                    var tempDelegate = self.delegate as! ChatroomListViewController
+                    let tempDelegate = self.delegate as! ChatroomListViewController
                     tempDelegate.roomListTableView.reloadData()
                 })
                 .store(in: &self.cancellables)
