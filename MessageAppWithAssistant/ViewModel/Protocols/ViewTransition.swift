@@ -21,8 +21,8 @@ protocol ViewTransition {
 extension ViewTransition {
     // ChatroomListViewへの遷移
     func transitionToChatroomListView() {
-        let storyboard: UIStoryboard = UIStoryboard(name: "ChatroomList", bundle: nil)
-        let nextView = storyboard.instantiateViewController(withIdentifier: "ChatroomListView") as! ChatroomListViewController
+        let storyboard: UIStoryboard = UIStoryboard(name: "MainTabBar", bundle: nil)
+        let nextView = storyboard.instantiateViewController(withIdentifier: "TabBarView") as! UITabBarController
         self.delegate!.present(nextView, animated: false, completion: nil)
     }
 
@@ -35,7 +35,7 @@ extension ViewTransition {
 
     // 初期設定画面への遷移
     func transitionToInitialSettingView() {
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard: UIStoryboard = UIStoryboard(name: "InitialSetting", bundle: nil)
         let nextView = storyboard.instantiateViewController(withIdentifier: "InitialSettingView") as! InitialSettingViewController
         self.delegate!.present(nextView, animated: true, completion: nil)
     }

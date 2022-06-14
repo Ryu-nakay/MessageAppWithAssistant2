@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF08B0BD2856FD15004DB3E6 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF08B0BC2856FD15004DB3E6 /* Setting.storyboard */; };
+		EF08B0BF2856FFAA004DB3E6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF08B0BE2856FFAA004DB3E6 /* MainTabBarController.swift */; };
+		EF08B0C1285705E4004DB3E6 /* ChatroomList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF08B0C0285705E4004DB3E6 /* ChatroomList.swift */; };
 		EF3251FB284F0FD7001A3263 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3251FA284F0FD7001A3263 /* SettingModel.swift */; };
 		EF3251FD284F132A001A3263 /* InitialSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3251FC284F132A001A3263 /* InitialSettingViewModel.swift */; };
 		EF4BEAB52856CBA100282DC4 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF4BEAB42856CBA100282DC4 /* Signup.storyboard */; };
+		EF4BEAB82856CEFA00282DC4 /* InitialSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF4BEAB72856CEFA00282DC4 /* InitialSetting.storyboard */; };
+		EF4BEABA2856D3D300282DC4 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF4BEAB92856D3D300282DC4 /* MainTabBar.storyboard */; };
 		EF55468D284B556E006372BA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF55468C284B556E006372BA /* LoginViewModel.swift */; };
 		EF55468F284B5722006372BA /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF55468E284B5722006372BA /* LoginModel.swift */; };
 		EF554691284B5A6B006372BA /* ChatroomList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF554690284B5A6B006372BA /* ChatroomList.storyboard */; };
 		EF554693284B5A92006372BA /* ChatroomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF554692284B5A92006372BA /* ChatroomListViewController.swift */; };
 		EFB3747A284ED86B001D59AE /* ViewTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB37479284ED86B001D59AE /* ViewTransition.swift */; };
 		EFB37481284EEB05001D59AE /* InitialSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB37480284EEB05001D59AE /* InitialSettingViewController.swift */; };
+		EFB6FDCB28576672000FACBD /* ChatroomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB6FDCA28576672000FACBD /* ChatroomListViewModel.swift */; };
 		EFCD61732849BCCF00509C0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD61722849BCCF00509C0D /* AppDelegate.swift */; };
 		EFCD61752849BCCF00509C0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD61742849BCCF00509C0D /* SceneDelegate.swift */; };
 		EFCD617A2849BCCF00509C0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFCD61782849BCCF00509C0D /* Main.storyboard */; };
@@ -48,17 +54,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF08B0BC2856FD15004DB3E6 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		EF08B0BE2856FFAA004DB3E6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		EF08B0C0285705E4004DB3E6 /* ChatroomList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomList.swift; sourceTree = "<group>"; };
 		EF3251FA284F0FD7001A3263 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		EF3251FC284F132A001A3263 /* InitialSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSettingViewModel.swift; sourceTree = "<group>"; };
 		EF3251FE284F14F8001A3263 /* UserDefaultsData.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = UserDefaultsData.md; sourceTree = "<group>"; };
 		EF395688284EF91500A694A7 /* ToDo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ToDo.md; sourceTree = "<group>"; };
 		EF4BEAB42856CBA100282DC4 /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
+		EF4BEAB72856CEFA00282DC4 /* InitialSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InitialSetting.storyboard; sourceTree = "<group>"; };
+		EF4BEAB92856D3D300282DC4 /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
 		EF55468C284B556E006372BA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		EF55468E284B5722006372BA /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		EF554690284B5A6B006372BA /* ChatroomList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatroomList.storyboard; sourceTree = "<group>"; };
 		EF554692284B5A92006372BA /* ChatroomListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomListViewController.swift; sourceTree = "<group>"; };
 		EFB37479284ED86B001D59AE /* ViewTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTransition.swift; sourceTree = "<group>"; };
 		EFB37480284EEB05001D59AE /* InitialSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSettingViewController.swift; sourceTree = "<group>"; };
+		EFB6FDCA28576672000FACBD /* ChatroomListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomListViewModel.swift; sourceTree = "<group>"; };
 		EFCD616F2849BCCF00509C0D /* MessageAppWithAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageAppWithAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFCD61722849BCCF00509C0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFCD61742849BCCF00509C0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,13 +114,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF4BEAB62856CEE000282DC4 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				EFCD61782849BCCF00509C0D /* Main.storyboard */,
+				EF4BEAB42856CBA100282DC4 /* Signup.storyboard */,
+				EF4BEAB72856CEFA00282DC4 /* InitialSetting.storyboard */,
+				EF4BEAB92856D3D300282DC4 /* MainTabBar.storyboard */,
+				EF554690284B5A6B006372BA /* ChatroomList.storyboard */,
+				EF08B0BC2856FD15004DB3E6 /* Setting.storyboard */,
+				EFCD617D2849BCD100509C0D /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		EF554689284B5482006372BA /* View */ = {
 			isa = PBXGroup;
 			children = (
 				EFFC1AF32849D6C2009C99D8 /* LoginViewController.swift */,
 				EFFC1AF52849D86A009C99D8 /* SignupViewController.swift */,
-				EF554692284B5A92006372BA /* ChatroomListViewController.swift */,
 				EFB37480284EEB05001D59AE /* InitialSettingViewController.swift */,
+				EF08B0BE2856FFAA004DB3E6 /* MainTabBarController.swift */,
+				EF554692284B5A92006372BA /* ChatroomListViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -119,6 +146,7 @@
 				EF55468C284B556E006372BA /* LoginViewModel.swift */,
 				EFFCAE13284DC6E500831926 /* SignupViewModel.swift */,
 				EF3251FC284F132A001A3263 /* InitialSettingViewModel.swift */,
+				EFB6FDCA28576672000FACBD /* ChatroomListViewModel.swift */,
 				EFFCAE15284DCCD700831926 /* Protocols */,
 			);
 			path = ViewModel;
@@ -129,6 +157,7 @@
 			children = (
 				EF55468E284B5722006372BA /* LoginModel.swift */,
 				EF3251FA284F0FD7001A3263 /* SettingModel.swift */,
+				EF08B0C0285705E4004DB3E6 /* ChatroomList.swift */,
 				EFB3747B284EDC49001D59AE /* Protoclos */,
 			);
 			path = Model;
@@ -169,11 +198,8 @@
 				EF55468B284B555C006372BA /* Model */,
 				EFCD61722849BCCF00509C0D /* AppDelegate.swift */,
 				EFCD61742849BCCF00509C0D /* SceneDelegate.swift */,
-				EFCD61782849BCCF00509C0D /* Main.storyboard */,
-				EF4BEAB42856CBA100282DC4 /* Signup.storyboard */,
-				EF554690284B5A6B006372BA /* ChatroomList.storyboard */,
+				EF4BEAB62856CEE000282DC4 /* Storyboard */,
 				EFCD617B2849BCD100509C0D /* Assets.xcassets */,
-				EFCD617D2849BCD100509C0D /* LaunchScreen.storyboard */,
 				EFCD61802849BCD100509C0D /* Info.plist */,
 				EF3251FE284F14F8001A3263 /* UserDefaultsData.md */,
 				EF395688284EF91500A694A7 /* ToDo.md */,
@@ -318,8 +344,11 @@
 				EFCD617F2849BCD100509C0D /* LaunchScreen.storyboard in Resources */,
 				EFCD617C2849BCD100509C0D /* Assets.xcassets in Resources */,
 				EFCD617A2849BCCF00509C0D /* Main.storyboard in Resources */,
+				EF4BEABA2856D3D300282DC4 /* MainTabBar.storyboard in Resources */,
 				EF4BEAB52856CBA100282DC4 /* Signup.storyboard in Resources */,
+				EF4BEAB82856CEFA00282DC4 /* InitialSetting.storyboard in Resources */,
 				EF554691284B5A6B006372BA /* ChatroomList.storyboard in Resources */,
+				EF08B0BD2856FD15004DB3E6 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,8 +383,11 @@
 				EFFC1AF62849D86A009C99D8 /* SignupViewController.swift in Sources */,
 				EFCD61732849BCCF00509C0D /* AppDelegate.swift in Sources */,
 				EF3251FB284F0FD7001A3263 /* SettingModel.swift in Sources */,
+				EF08B0BF2856FFAA004DB3E6 /* MainTabBarController.swift in Sources */,
+				EFB6FDCB28576672000FACBD /* ChatroomListViewModel.swift in Sources */,
 				EF55468D284B556E006372BA /* LoginViewModel.swift in Sources */,
 				EFCD61752849BCCF00509C0D /* SceneDelegate.swift in Sources */,
+				EF08B0C1285705E4004DB3E6 /* ChatroomList.swift in Sources */,
 				EF554693284B5A92006372BA /* ChatroomListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
