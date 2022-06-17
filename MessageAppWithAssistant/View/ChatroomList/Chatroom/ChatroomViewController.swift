@@ -28,6 +28,7 @@ class ChatroomViewController: UIViewController {
         self.chatTableView.delegate = self
 
         self.chatTableView.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: "ChatTableViewCell")
+        self.chatTableView.register(UINib(nibName: "MyChatTableViewCell", bundle: nil), forCellReuseIdentifier: "MyChatTableViewCell")
 
         self.chatTableView.estimatedRowHeight = 90
         self.chatTableView.rowHeight = UITableView.automaticDimension
@@ -44,13 +45,24 @@ extension ChatroomViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell", for: indexPath) as! ChatTableViewCell
-        cell.messageLabel.text = "\(self.viewModel.chatList[indexPath.row].contents)123456789"
-        let date =  NSDate(timeIntervalSince1970: self.viewModel.chatList[indexPath.row].sendTime)
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
+        if indexPath.row%2 == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell", for: indexPath) as! ChatTableViewCell
+            cell.messageLabel.text = "\(self.viewModel.chatList[indexPath.row].contents)"
+            let date =  NSDate(timeIntervalSince1970: self.viewModel.chatList[indexPath.row].sendTime)
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH:mm"
+            cell.dateLabel.text = "\(formatter.string(from: date as Date))"
 
-        // cell.dateLabel.text = "\(formatter.string(from: date as Date))"
-        return cell
+            cell.userNameLabel.text = self.viewModel.chatList[indexPath.row].sendUserId
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MyChatTableViewCell", for: indexPath) as! MyChatTableViewCell
+            cell.messageLabel.text = "\(self.viewModel.chatList[indexPath.row].contents)"
+            let date =  NSDate(timeIntervalSince1970: self.viewModel.chatList[indexPath.row].sendTime)
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH:mm"
+            cell.dateLabel.text = "\(formatter.string(from: date as Date))"
+            return cell
+        }
     }
 }

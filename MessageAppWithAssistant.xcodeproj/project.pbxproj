@@ -27,9 +27,11 @@
 		EF82AE41285848340071F456 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF82AE40285848340071F456 /* Chat.swift */; };
 		EF82AE4428585CAA0071F456 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF82AE4228585CAA0071F456 /* ChatTableViewCell.swift */; };
 		EF82AE4528585CAA0071F456 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF82AE4328585CAA0071F456 /* ChatTableViewCell.xib */; };
+		EF8B6CDD285CACA000DCC6D2 /* MyChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8B6CDC285CACA000DCC6D2 /* MyChatTableViewCell.swift */; };
 		EFB3747A284ED86B001D59AE /* ViewTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB37479284ED86B001D59AE /* ViewTransition.swift */; };
 		EFB37481284EEB05001D59AE /* InitialSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB37480284EEB05001D59AE /* InitialSettingViewController.swift */; };
 		EFB6FDCB28576672000FACBD /* ChatroomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB6FDCA28576672000FACBD /* ChatroomListViewModel.swift */; };
+		EFB7FE92285CA8D700B20406 /* MyChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFB7FE90285CA8D700B20406 /* MyChatTableViewCell.xib */; };
 		EFCD61732849BCCF00509C0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD61722849BCCF00509C0D /* AppDelegate.swift */; };
 		EFCD61752849BCCF00509C0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD61742849BCCF00509C0D /* SceneDelegate.swift */; };
 		EFCD617A2849BCCF00509C0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFCD61782849BCCF00509C0D /* Main.storyboard */; };
@@ -84,9 +86,11 @@
 		EF82AE40285848340071F456 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		EF82AE4228585CAA0071F456 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		EF82AE4328585CAA0071F456 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
+		EF8B6CDC285CACA000DCC6D2 /* MyChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatTableViewCell.swift; sourceTree = "<group>"; };
 		EFB37479284ED86B001D59AE /* ViewTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTransition.swift; sourceTree = "<group>"; };
 		EFB37480284EEB05001D59AE /* InitialSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSettingViewController.swift; sourceTree = "<group>"; };
 		EFB6FDCA28576672000FACBD /* ChatroomListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomListViewModel.swift; sourceTree = "<group>"; };
+		EFB7FE90285CA8D700B20406 /* MyChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyChatTableViewCell.xib; sourceTree = "<group>"; };
 		EFCD616F2849BCCF00509C0D /* MessageAppWithAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageAppWithAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFCD61722849BCCF00509C0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFCD61742849BCCF00509C0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -217,6 +221,7 @@
 			children = (
 				EF5DB4EF28582F6C00FEA279 /* ChatroomViewController.swift */,
 				EF82AE4228585CAA0071F456 /* ChatTableViewCell.swift */,
+				EF8B6CDC285CACA000DCC6D2 /* MyChatTableViewCell.swift */,
 			);
 			path = Chatroom;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 			children = (
 				EF5DB4ED28582F3600FEA279 /* Chatroom.storyboard */,
 				EF82AE4328585CAA0071F456 /* ChatTableViewCell.xib */,
+				EFB7FE90285CA8D700B20406 /* MyChatTableViewCell.xib */,
 			);
 			path = Chatroom;
 			sourceTree = "<group>";
@@ -450,6 +456,7 @@
 				EFCD617C2849BCD100509C0D /* Assets.xcassets in Resources */,
 				EF82AE4528585CAA0071F456 /* ChatTableViewCell.xib in Resources */,
 				EFCD617A2849BCCF00509C0D /* Main.storyboard in Resources */,
+				EFB7FE92285CA8D700B20406 /* MyChatTableViewCell.xib in Resources */,
 				EF4BEABA2856D3D300282DC4 /* MainTabBar.storyboard in Resources */,
 				EF4BEAB52856CBA100282DC4 /* Signup.storyboard in Resources */,
 				EF4BEAB82856CEFA00282DC4 /* InitialSetting.storyboard in Resources */,
@@ -491,6 +498,7 @@
 				EFFCAE17284DCCF200831926 /* UseActivityIndicator.swift in Sources */,
 				EFFC1AF62849D86A009C99D8 /* SignupViewController.swift in Sources */,
 				EFCD61732849BCCF00509C0D /* AppDelegate.swift in Sources */,
+				EF8B6CDD285CACA000DCC6D2 /* MyChatTableViewCell.swift in Sources */,
 				EF3251FB284F0FD7001A3263 /* SettingModel.swift in Sources */,
 				EF08B0BF2856FFAA004DB3E6 /* MainTabBarController.swift in Sources */,
 				EF82AE41285848340071F456 /* Chat.swift in Sources */,

@@ -1,23 +1,20 @@
 //
-//  ChatTableViewCell.swift
+//  MyChatTableViewCell.swift
 //  MessageAppWithAssistant
 //
-//  Created by 中山龍 on 2022/06/14.
+//  Created by 中山龍 on 2022/06/17.
 //
 
 import UIKit
 
-class ChatTableViewCell: UITableViewCell {
-    @IBOutlet weak var userIcon: UIImageView!
+class MyChatTableViewCell: UITableViewCell {
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var messageBackgroundView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var userNameLabel: UILabel!
-    
+    @IBOutlet weak var messageBackgroundView: UIView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.userIcon.layer.cornerRadius = 44/2
-        
+        // Initialization code
         self.messageLabel.adjustsFontSizeToFitWidth = true
         self.messageBackgroundView.layer.cornerRadius = 10
     }
@@ -27,4 +24,5 @@ class ChatTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
 }
