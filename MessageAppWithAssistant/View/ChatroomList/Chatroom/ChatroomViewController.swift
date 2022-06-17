@@ -8,7 +8,8 @@
 import UIKit
 
 class ChatroomViewController: UIViewController {
-
+    @IBOutlet weak var chatTableView: UITableView!
+    
     var roomInfo: RoomItem? {
         didSet {
             navigationItem.title = roomInfo!.roomName
@@ -23,5 +24,33 @@ class ChatroomViewController: UIViewController {
         super.viewDidLoad()
 
         self.viewModel.delegate = self
+        self.chatTableView.dataSource = self
+        self.chatTableView.delegate = self
+
+        self.chatTableView.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: "ChatTableViewCell")
+
+        self.chatTableView.estimatedRowHeight = 90
+        self.chatTableView.rowHeight = UITableView.automaticDimension
+    }
+}
+
+extension ChatroomViewController: UITableViewDelegate {
+
+}
+
+extension ChatroomViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.viewModel.chatList.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell", for: indexPath) as! ChatTableViewCell
+        cell.messageLabel.text = "\(self.viewModel.chatList[indexPath.row].contents)123456789"
+        let date =  NSDate(timeIntervalSince1970: self.viewModel.chatList[indexPath.row].sendTime)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+
+        // cell.dateLabel.text = "\(formatter.string(from: date as Date))"
+        return cell
     }
 }

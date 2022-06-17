@@ -25,6 +25,8 @@
 		EF5DB4F028582F6C00FEA279 /* ChatroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5DB4EF28582F6C00FEA279 /* ChatroomViewController.swift */; };
 		EF82AE3F2858396B0071F456 /* ChatroomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF82AE3E2858396B0071F456 /* ChatroomViewModel.swift */; };
 		EF82AE41285848340071F456 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF82AE40285848340071F456 /* Chat.swift */; };
+		EF82AE4428585CAA0071F456 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF82AE4228585CAA0071F456 /* ChatTableViewCell.swift */; };
+		EF82AE4528585CAA0071F456 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF82AE4328585CAA0071F456 /* ChatTableViewCell.xib */; };
 		EFB3747A284ED86B001D59AE /* ViewTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB37479284ED86B001D59AE /* ViewTransition.swift */; };
 		EFB37481284EEB05001D59AE /* InitialSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB37480284EEB05001D59AE /* InitialSettingViewController.swift */; };
 		EFB6FDCB28576672000FACBD /* ChatroomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB6FDCA28576672000FACBD /* ChatroomListViewModel.swift */; };
@@ -80,6 +82,8 @@
 		EF5DB4EF28582F6C00FEA279 /* ChatroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomViewController.swift; sourceTree = "<group>"; };
 		EF82AE3E2858396B0071F456 /* ChatroomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomViewModel.swift; sourceTree = "<group>"; };
 		EF82AE40285848340071F456 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		EF82AE4228585CAA0071F456 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		EF82AE4328585CAA0071F456 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		EFB37479284ED86B001D59AE /* ViewTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTransition.swift; sourceTree = "<group>"; };
 		EFB37480284EEB05001D59AE /* InitialSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSettingViewController.swift; sourceTree = "<group>"; };
 		EFB6FDCA28576672000FACBD /* ChatroomListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomListViewModel.swift; sourceTree = "<group>"; };
@@ -184,7 +188,7 @@
 			children = (
 				EF554690284B5A6B006372BA /* ChatroomList.storyboard */,
 				EF5DB4E72858212C00FEA279 /* ChatroomListTableViewCell.xib */,
-				EF5DB4ED28582F3600FEA279 /* Chatroom.storyboard */,
+				EF82AE4628585CB40071F456 /* Chatroom */,
 			);
 			path = ChatroomList;
 			sourceTree = "<group>";
@@ -212,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				EF5DB4EF28582F6C00FEA279 /* ChatroomViewController.swift */,
+				EF82AE4228585CAA0071F456 /* ChatTableViewCell.swift */,
 			);
 			path = Chatroom;
 			sourceTree = "<group>";
@@ -249,6 +254,15 @@
 			isa = PBXGroup;
 			children = (
 				EF82AE3E2858396B0071F456 /* ChatroomViewModel.swift */,
+			);
+			path = Chatroom;
+			sourceTree = "<group>";
+		};
+		EF82AE4628585CB40071F456 /* Chatroom */ = {
+			isa = PBXGroup;
+			children = (
+				EF5DB4ED28582F3600FEA279 /* Chatroom.storyboard */,
+				EF82AE4328585CAA0071F456 /* ChatTableViewCell.xib */,
 			);
 			path = Chatroom;
 			sourceTree = "<group>";
@@ -434,6 +448,7 @@
 				EF5DB4E92858212C00FEA279 /* ChatroomListTableViewCell.xib in Resources */,
 				EFCD617F2849BCD100509C0D /* LaunchScreen.storyboard in Resources */,
 				EFCD617C2849BCD100509C0D /* Assets.xcassets in Resources */,
+				EF82AE4528585CAA0071F456 /* ChatTableViewCell.xib in Resources */,
 				EFCD617A2849BCCF00509C0D /* Main.storyboard in Resources */,
 				EF4BEABA2856D3D300282DC4 /* MainTabBar.storyboard in Resources */,
 				EF4BEAB52856CBA100282DC4 /* Signup.storyboard in Resources */,
@@ -483,6 +498,7 @@
 				EF82AE3F2858396B0071F456 /* ChatroomViewModel.swift in Sources */,
 				EF55468D284B556E006372BA /* LoginViewModel.swift in Sources */,
 				EFCD61752849BCCF00509C0D /* SceneDelegate.swift in Sources */,
+				EF82AE4428585CAA0071F456 /* ChatTableViewCell.swift in Sources */,
 				EF08B0C1285705E4004DB3E6 /* ChatroomList.swift in Sources */,
 				EF554693284B5A92006372BA /* ChatroomListViewController.swift in Sources */,
 			);

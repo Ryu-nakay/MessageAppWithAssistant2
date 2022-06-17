@@ -38,13 +38,13 @@ class ChatroomViewModel: UseActivityIndicator {
             )
             .store(in: &cancellables)
 
-        self.chat.$chatList.assign(to: &self.$chatList)
-
-        self.$chatList
+        self.chat.$chatList
             .sink(receiveValue: { receiveChat in
-                receiveChat.map({ chatItem in
-                    print(chatItem.contents)
-                })
+                self.chatList = receiveChat
+                let tempDelegate = self.delegate as? ChatroomViewController
+                if let _ = tempDelegate {
+                    tempDelegate!.chatTableView.reloadData()
+                }
             })
             .store(in: &self.cancellables)
     }
