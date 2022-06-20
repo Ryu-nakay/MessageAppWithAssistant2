@@ -12,6 +12,8 @@
 		EF089D632860117F009A4F97 /* LoginModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF089D622860117E009A4F97 /* LoginModelTests.swift */; };
 		EF089D67286017E4009A4F97 /* OHHTTPStubs in Frameworks */ = {isa = PBXBuildFile; productRef = EF089D66286017E4009A4F97 /* OHHTTPStubs */; };
 		EF089D69286017E4009A4F97 /* OHHTTPStubsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EF089D68286017E4009A4F97 /* OHHTTPStubsSwift */; };
+		EF089D6C286040E8009A4F97 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = EF089D6B286040E8009A4F97 /* Realm */; };
+		EF089D6E286040E8009A4F97 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EF089D6D286040E8009A4F97 /* RealmSwift */; };
 		EF08B0BD2856FD15004DB3E6 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF08B0BC2856FD15004DB3E6 /* Setting.storyboard */; };
 		EF08B0BF2856FFAA004DB3E6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF08B0BE2856FFAA004DB3E6 /* MainTabBarController.swift */; };
 		EF08B0C1285705E4004DB3E6 /* ChatroomList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF08B0C0285705E4004DB3E6 /* ChatroomList.swift */; };
@@ -123,6 +125,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF089D6E286040E8009A4F97 /* RealmSwift in Frameworks */,
+				EF089D6C286040E8009A4F97 /* Realm in Frameworks */,
 				EF089D67286017E4009A4F97 /* OHHTTPStubs in Frameworks */,
 				EF089D69286017E4009A4F97 /* OHHTTPStubsSwift in Frameworks */,
 			);
@@ -377,6 +381,8 @@
 			packageProductDependencies = (
 				EF089D66286017E4009A4F97 /* OHHTTPStubs */,
 				EF089D68286017E4009A4F97 /* OHHTTPStubsSwift */,
+				EF089D6B286040E8009A4F97 /* Realm */,
+				EF089D6D286040E8009A4F97 /* RealmSwift */,
 			);
 			productName = MessageAppWithAssistant;
 			productReference = EFCD616F2849BCCF00509C0D /* MessageAppWithAssistant.app */;
@@ -452,6 +458,7 @@
 			mainGroup = EFCD61662849BCCF00509C0D;
 			packageReferences = (
 				EF089D65286017E4009A4F97 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */,
+				EF089D6A286040E8009A4F97 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = EFCD61702849BCCF00509C0D /* Products */;
 			projectDirPath = "";
@@ -881,6 +888,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		EF089D6A286040E8009A4F97 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -893,6 +908,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EF089D65286017E4009A4F97 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */;
 			productName = OHHTTPStubsSwift;
+		};
+		EF089D6B286040E8009A4F97 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF089D6A286040E8009A4F97 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		EF089D6D286040E8009A4F97 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF089D6A286040E8009A4F97 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

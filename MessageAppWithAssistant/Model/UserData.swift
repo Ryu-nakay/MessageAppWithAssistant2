@@ -7,8 +7,10 @@
 
 import Foundation
 import Combine
+import RealmSwift
 
 struct UserData {
+
     func tryToGetUserPublisher(userId: String) -> AnyPublisher<UserInfo, Error> {
         var request = URLRequest(url: URL(string: "https://hbh6aoer97.execute-api.us-west-1.amazonaws.com/test/getuser")!)
         // HTTPメソッド
@@ -44,7 +46,26 @@ struct UserData {
                             result = try JSONDecoder().decode(Response.self, from: data)
                             print("result: \(result.body.userName)")
 
-                            var resultUserInfo = UserInfo(userId: userId, searchId: result.body.searchId, userName: result.body.userName)
+                            let resultUserInfo = UserInfo()
+
+                            resultUserInfo.userId = userId
+                            resultUserInfo.userName = result.body.userName
+                            resultUserInfo.searchId = result.body.searchId
+
+                            let realm = try! Realm()
+                            try! realm.write {
+                                print("取り出したよ")
+                                let targetUserInfo = realm.objects(UserInfo.self).filter(NSPredicate(format: "userId == %@", resultUserInfo.userId))
+                                print("取り出せたよ")
+                                if targetUserInfo.count == 0 {
+                                    realm.add(resultUserInfo)
+                                } else {
+                                    targetUserInfo[0].searchId = resultUserInfo.searchId
+                                    targetUserInfo[0].userName = resultUserInfo.userName
+                                }
+
+                            }
+                             
                             promise(.success(resultUserInfo))
                         } catch let error {
                             print(error) // エラー
@@ -68,8 +89,8 @@ struct UserData {
     }
 }
 
-struct UserInfo {
-    var userId: String
-    var searchId: String
-    var userName: String
+class UserInfo: Object {
+    @objc dynamic var userId: String = ""
+    @objc dynamic var searchId: String = ""
+    @objc dynamic var userName: String = ""
 }

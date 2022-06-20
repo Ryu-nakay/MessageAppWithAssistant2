@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import RealmSwift
 
 class Chat {
 
@@ -22,6 +23,8 @@ extension Chat {
         // APIへのURL
         let url = "https://hbh6aoer97.execute-api.us-west-1.amazonaws.com/test/getchats"
 
+        let userData = UserData()
+
         self.isLoading = true
 
 
@@ -32,6 +35,21 @@ extension Chat {
                     self.chatList = result
                     print("\(self.chatList.count)")
                 }
+
+                let tempUserIdArray = Set(
+                    result.map({ chat in
+                        chat.sendUserId
+                    })
+                )
+
+                tempUserIdArray.map({ userId in
+                    print("UserDataを取得しました")
+                    userData.tryToGetUserPublisher(userId: userId)
+                })
+                let realm = try! Realm()
+
+                let results = realm.objects(UserInfo.self)
+                print(results)
             })
             .store(in: &self.cancellables)
 

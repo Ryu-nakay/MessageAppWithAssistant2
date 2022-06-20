@@ -58,16 +58,6 @@ extension ChatroomViewController: UITableViewDataSource {
             let formatter = DateFormatter()
             formatter.dateFormat = "HH:mm"
             cell.dateLabel.text = "\(formatter.string(from: date as Date))"
-
-            self.viewModel.tryToGetUserNamePublisher(userId: currentChatData.sendUserId)
-                .sink(receiveCompletion: { result in
-                    print("error")
-                }, receiveValue: { userInfo in
-                    DispatchQueue.main.async {
-                        cell.userNameLabel.text = userInfo.userName
-                    }
-                })
-                .store(in: &self.cancellables)
             
             return cell
 
