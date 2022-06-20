@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomRoomCell" rowHeight="54" id="KGk-i7-Jjw" customClass="ChatroomListTableViewCell" customModule="MessageAppWithAssistant" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ammonite" translatesAutoresizingMaskIntoConstraints="NO" id="MFK-E8-9wR">
+                        <rect key="frame" x="4" y="6" width="44" height="44"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="HLk-JH-HiC"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="cxr-zk-e9d"/>
+                            <constraint firstAttribute="height" constant="44" id="jas-Tn-Pez"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMR-XY-3t5">
+                        <rect key="frame" x="58" y="17.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="MFK-E8-9wR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="2wM-J0-hLW"/>
+                    <constraint firstAttribute="bottom" secondItem="MFK-E8-9wR" secondAttribute="bottom" constant="6" id="Dip-ed-JQh"/>
+                    <constraint firstItem="MFK-E8-9wR" firstAttribute="centerY" secondItem="DMR-XY-3t5" secondAttribute="centerY" id="J5d-k1-Usx"/>
+                    <constraint firstItem="DMR-XY-3t5" firstAttribute="leading" secondItem="MFK-E8-9wR" secondAttribute="trailing" constant="10" id="vaS-Wx-GmT"/>
+                    <constraint firstItem="DMR-XY-3t5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="war-bR-0Ov"/>
+                    <constraint firstItem="MFK-E8-9wR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="yVD-sk-4wN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="iconImage" destination="MFK-E8-9wR" id="ExY-GG-XPH"/>
+                <outlet property="roomNameLabel" destination="DMR-XY-3t5" id="WXD-BR-HT7"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="97.098214285714278"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Ammonite" width="500" height="500"/>
+    </resources>
+</document>
