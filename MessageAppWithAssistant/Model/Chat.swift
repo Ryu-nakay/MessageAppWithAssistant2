@@ -70,6 +70,10 @@ extension Chat {
                             do {
                                 result = try JSONDecoder().decode(Response.self, from: data)
                                 print("result: \(result.body.chatList.count)")
+                                // チャットデータのソート
+                                result.body.chatList.sort(by: {
+                                    $0.sendTime < $1.sendTime
+                                })
                                 promise(.success(result.body.chatList))
                             } catch let error {
                                 print(error) // エラー
@@ -83,9 +87,9 @@ extension Chat {
 
 
                 struct Response: Codable {
-                    let body: ResponseRoomList
+                    var body: ResponseRoomList
                     struct ResponseRoomList: Codable{
-                        let chatList: [ChatItem]
+                        var chatList: [ChatItem]
                     }
                 }
             }.eraseToAnyPublisher()

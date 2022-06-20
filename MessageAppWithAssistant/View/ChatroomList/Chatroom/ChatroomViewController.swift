@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Combine
 
 class ChatroomViewController: UIViewController {
     @IBOutlet weak var chatTableView: UITableView!
+    var cancellables = Set<AnyCancellable>()
     
     var roomInfo: RoomItem? {
         didSet {
@@ -45,20 +47,34 @@ extension ChatroomViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row%2 == 0 {
+        let myUserId = UserDefaults.standard.string(forKey: "userId")
+
+        let currentChatData = self.viewModel.chatList[indexPath.row]
+
+        if currentChatData.sendUserId != myUserId {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell", for: indexPath) as! ChatTableViewCell
-            cell.messageLabel.text = "\(self.viewModel.chatList[indexPath.row].contents)"
-            let date =  NSDate(timeIntervalSince1970: self.viewModel.chatList[indexPath.row].sendTime)
+            cell.messageLabel.text = "\(currentChatData.contents)"
+            let date =  NSDate(timeIntervalSince1970: currentChatData.sendTime)
             let formatter = DateFormatter()
             formatter.dateFormat = "HH:mm"
             cell.dateLabel.text = "\(formatter.string(from: date as Date))"
 
-            cell.userNameLabel.text = self.viewModel.chatList[indexPath.row].sendUserId
+            self.viewModel.tryToGetUserNamePublisher(userId: currentChatData.sendUserId)
+                .sink(receiveCompletion: { result in
+                    print("error")
+                }, receiveValue: { userInfo in
+                    DispatchQueue.main.async {
+                        cell.userNameLabel.text = userInfo.userName
+                    }
+                })
+                .store(in: &self.cancellables)
+            
             return cell
+
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MyChatTableViewCell", for: indexPath) as! MyChatTableViewCell
-            cell.messageLabel.text = "\(self.viewModel.chatList[indexPath.row].contents)"
-            let date =  NSDate(timeIntervalSince1970: self.viewModel.chatList[indexPath.row].sendTime)
+            cell.messageLabel.text = "\(currentChatData.contents)"
+            let date =  NSDate(timeIntervalSince1970: currentChatData.sendTime)
             let formatter = DateFormatter()
             formatter.dateFormat = "HH:mm"
             cell.dateLabel.text = "\(formatter.string(from: date as Date))"

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF089D5D286001D4009A4F97 /* KeyboardValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF089D5C286001D4009A4F97 /* KeyboardValidation.swift */; };
+		EF089D6128600C75009A4F97 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF089D6028600C75009A4F97 /* UserData.swift */; };
+		EF089D632860117F009A4F97 /* LoginModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF089D622860117E009A4F97 /* LoginModelTests.swift */; };
+		EF089D67286017E4009A4F97 /* OHHTTPStubs in Frameworks */ = {isa = PBXBuildFile; productRef = EF089D66286017E4009A4F97 /* OHHTTPStubs */; };
+		EF089D69286017E4009A4F97 /* OHHTTPStubsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EF089D68286017E4009A4F97 /* OHHTTPStubsSwift */; };
 		EF08B0BD2856FD15004DB3E6 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF08B0BC2856FD15004DB3E6 /* Setting.storyboard */; };
 		EF08B0BF2856FFAA004DB3E6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF08B0BE2856FFAA004DB3E6 /* MainTabBarController.swift */; };
 		EF08B0C1285705E4004DB3E6 /* ChatroomList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF08B0C0285705E4004DB3E6 /* ChatroomList.swift */; };
@@ -64,6 +69,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF089D5C286001D4009A4F97 /* KeyboardValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardValidation.swift; sourceTree = "<group>"; };
+		EF089D6028600C75009A4F97 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		EF089D622860117E009A4F97 /* LoginModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModelTests.swift; sourceTree = "<group>"; };
+		EF089D64286014F7009A4F97 /* LoginResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LoginResponse.json; sourceTree = "<group>"; };
 		EF08B0BC2856FD15004DB3E6 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		EF08B0BE2856FFAA004DB3E6 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		EF08B0C0285705E4004DB3E6 /* ChatroomList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomList.swift; sourceTree = "<group>"; };
@@ -114,6 +123,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF089D67286017E4009A4F97 /* OHHTTPStubs in Frameworks */,
+				EF089D69286017E4009A4F97 /* OHHTTPStubsSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,8 +182,9 @@
 				EF55468E284B5722006372BA /* LoginModel.swift */,
 				EF3251FA284F0FD7001A3263 /* SettingModel.swift */,
 				EF08B0C0285705E4004DB3E6 /* ChatroomList.swift */,
-				EFB3747B284EDC49001D59AE /* Protoclos */,
 				EF82AE40285848340071F456 /* Chat.swift */,
+				EF089D6028600C75009A4F97 /* UserData.swift */,
+				EFB3747B284EDC49001D59AE /* Protoclos */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,6 +333,8 @@
 			isa = PBXGroup;
 			children = (
 				EFCD61892849BCD100509C0D /* MessageAppWithAssistantTests.swift */,
+				EF089D622860117E009A4F97 /* LoginModelTests.swift */,
+				EF089D64286014F7009A4F97 /* LoginResponse.json */,
 			);
 			path = MessageAppWithAssistantTests;
 			sourceTree = "<group>";
@@ -339,6 +353,7 @@
 			children = (
 				EFFCAE16284DCCF200831926 /* UseActivityIndicator.swift */,
 				EFB37479284ED86B001D59AE /* ViewTransition.swift */,
+				EF089D5C286001D4009A4F97 /* KeyboardValidation.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -360,6 +375,8 @@
 			);
 			name = MessageAppWithAssistant;
 			packageProductDependencies = (
+				EF089D66286017E4009A4F97 /* OHHTTPStubs */,
+				EF089D68286017E4009A4F97 /* OHHTTPStubsSwift */,
 			);
 			productName = MessageAppWithAssistant;
 			productReference = EFCD616F2849BCCF00509C0D /* MessageAppWithAssistant.app */;
@@ -434,6 +451,7 @@
 			);
 			mainGroup = EFCD61662849BCCF00509C0D;
 			packageReferences = (
+				EF089D65286017E4009A4F97 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */,
 			);
 			productRefGroup = EFCD61702849BCCF00509C0D /* Products */;
 			projectDirPath = "";
@@ -505,7 +523,9 @@
 				EFB6FDCB28576672000FACBD /* ChatroomListViewModel.swift in Sources */,
 				EF82AE3F2858396B0071F456 /* ChatroomViewModel.swift in Sources */,
 				EF55468D284B556E006372BA /* LoginViewModel.swift in Sources */,
+				EF089D6128600C75009A4F97 /* UserData.swift in Sources */,
 				EFCD61752849BCCF00509C0D /* SceneDelegate.swift in Sources */,
+				EF089D5D286001D4009A4F97 /* KeyboardValidation.swift in Sources */,
 				EF82AE4428585CAA0071F456 /* ChatTableViewCell.swift in Sources */,
 				EF08B0C1285705E4004DB3E6 /* ChatroomList.swift in Sources */,
 				EF554693284B5A92006372BA /* ChatroomListViewController.swift in Sources */,
@@ -517,6 +537,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFCD618A2849BCD100509C0D /* MessageAppWithAssistantTests.swift in Sources */,
+				EF089D632860117F009A4F97 /* LoginModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -850,6 +871,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EF089D65286017E4009A4F97 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/OHHTTPStubs.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EF089D66286017E4009A4F97 /* OHHTTPStubs */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF089D65286017E4009A4F97 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */;
+			productName = OHHTTPStubs;
+		};
+		EF089D68286017E4009A4F97 /* OHHTTPStubsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF089D65286017E4009A4F97 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */;
+			productName = OHHTTPStubsSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EFCD61672849BCCF00509C0D /* Project object */;
 }

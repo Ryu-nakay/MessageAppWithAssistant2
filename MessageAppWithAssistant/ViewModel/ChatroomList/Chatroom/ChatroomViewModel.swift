@@ -16,6 +16,8 @@ class ChatroomViewModel: UseActivityIndicator {
 
     var chat = Chat()
 
+    var userData = UserData()
+
     // ローディングフラグ
     @Published var isLoading: Bool = false
     @Published var chatList = [ChatItem]()
@@ -51,5 +53,9 @@ class ChatroomViewModel: UseActivityIndicator {
 
     func tryToGetChatData(roomId: String, start: Int, count: Int) {
         self.chat.tryToGetChatData(roomId: roomId, start: start, count: count)
+    }
+
+    func tryToGetUserNamePublisher(userId: String) -> AnyPublisher<UserInfo, Error> {
+        return self.userData.tryToGetUserPublisher(userId: userId)
     }
 }
