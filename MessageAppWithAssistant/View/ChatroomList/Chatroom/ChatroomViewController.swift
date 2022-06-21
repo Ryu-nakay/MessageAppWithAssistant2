@@ -7,6 +7,8 @@
 
 import UIKit
 import Combine
+import RealmSwift
+import Realm
 
 class ChatroomViewController: UIViewController {
     @IBOutlet weak var chatTableView: UITableView!
@@ -58,6 +60,18 @@ extension ChatroomViewController: UITableViewDataSource {
             let formatter = DateFormatter()
             formatter.dateFormat = "HH:mm"
             cell.dateLabel.text = "\(formatter.string(from: date as Date))"
+
+            let realm = try! Realm()
+            realm.objects(UserInfo.self).filter(NSPredicate(format: "userId == %@", currentChatData.sendUserId))
+                .publisher
+                .sink(receiveCompletion: { _ in
+
+                }, receiveValue: { info in
+                    if info.count != 0 {
+                        cell.userNameLabel.text = info[0].userName
+                    }
+                })
+                .store(in: &self.cancellables)
             
             return cell
 
