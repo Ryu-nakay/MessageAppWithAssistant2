@@ -28,7 +28,6 @@ class ChatroomListViewController: UIViewController {
         self.roomListTableView.dataSource = self
         self.roomListTableView.delegate = self
         self.roomListTableView.tableFooterView = UIView(frame: .zero)
-        
 
         self.roomListTableView.register(UINib(nibName: "ChatroomListTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomRoomCell")
     }
@@ -57,6 +56,7 @@ extension ChatroomListViewController: UITableViewDataSource {
             if let nextVC = segue.destination as? ChatroomViewController {
                 let index = sender as? Int
                 nextVC.roomInfo = self.viewModel.roomArray[index!]
+                nextVC.hidesBottomBarWhenPushed = true
             }
         }
     }

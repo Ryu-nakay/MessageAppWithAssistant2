@@ -459,7 +459,6 @@
 			packageReferences = (
 				EF089D65286017E4009A4F97 /* XCRemoteSwiftPackageReference "OHHTTPStubs" */,
 				EF089D6A286040E8009A4F97 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				EFE6376628614DC900E9D7A5 /* XCRemoteSwiftPackageReference "CombineRealm" */,
 			);
 			productRefGroup = EFCD61702849BCCF00509C0D /* Products */;
 			projectDirPath = "";
@@ -895,14 +894,6 @@
 			requirement = {
 				branch = master;
 				kind = branch;
-			};
-		};
-		EFE6376628614DC900E9D7A5 /* XCRemoteSwiftPackageReference "CombineRealm" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/CombineCommunity/CombineRealm.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

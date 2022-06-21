@@ -36,8 +36,6 @@ class ChatroomViewController: UIViewController {
 
         self.chatTableView.estimatedRowHeight = 90
         self.chatTableView.rowHeight = UITableView.automaticDimension
-
-        self.tabBarController?.tabBar.isHidden = true
     }
 }
 
