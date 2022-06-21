@@ -36,6 +36,8 @@ class ChatroomViewController: UIViewController {
 
         self.chatTableView.estimatedRowHeight = 90
         self.chatTableView.rowHeight = UITableView.automaticDimension
+
+        self.tabBarController?.tabBar.isHidden = true
     }
 }
 
@@ -61,6 +63,7 @@ extension ChatroomViewController: UITableViewDataSource {
             formatter.dateFormat = "HH:mm"
             cell.dateLabel.text = "\(formatter.string(from: date as Date))"
 
+            // 名前の適応
             let realm = try! Realm()
             realm.objects(UserInfo.self).filter(NSPredicate(format: "userId == %@", currentChatData.sendUserId))
                 .publisher
