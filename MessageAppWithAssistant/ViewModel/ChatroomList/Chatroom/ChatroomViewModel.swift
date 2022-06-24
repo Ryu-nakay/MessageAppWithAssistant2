@@ -15,7 +15,8 @@ class ChatroomViewModel: UseActivityIndicator {
     var delegate: UIViewController?
 
     var chat = Chat()
-
+    var messageSender = MessageSender()
+    var messageListener = MessageListener()
     var userData = UserData()
 
     // ローディングフラグ
@@ -49,6 +50,10 @@ class ChatroomViewModel: UseActivityIndicator {
                 }
             })
             .store(in: &self.cancellables)
+    }
+
+    func onTapSendButton(roomId: String, contents: String) {
+        self.messageSender.send(roomId: roomId, contents: contents)
     }
 
     func tryToGetChatData(roomId: String, start: Int, count: Int) {

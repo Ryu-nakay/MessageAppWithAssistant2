@@ -24,6 +24,8 @@ extension ViewTransition {
         let storyboard: UIStoryboard = UIStoryboard(name: "MainTabBar", bundle: nil)
         let nextView = storyboard.instantiateViewController(withIdentifier: "TabBarView") as! UITabBarController
         self.delegate!.present(nextView, animated: false, completion: nil)
+
+        webSocketConnecter.connect()
     }
 
     // サインアップ画面への遷移

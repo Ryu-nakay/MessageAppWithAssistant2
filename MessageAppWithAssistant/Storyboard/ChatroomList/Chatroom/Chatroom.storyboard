@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DSO-25-clz">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="yXn-PQ-GMN">
@@ -35,18 +35,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="DSO-25-clz" secondAttribute="trailing" id="4U9-qR-yqm"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="DSO-25-clz" secondAttribute="bottom" id="IPw-gU-nd2"/>
+                            <constraint firstItem="DSO-25-clz" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" id="JeU-mD-rJV"/>
                             <constraint firstItem="DSO-25-clz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="UK1-Lb-mPL"/>
                             <constraint firstItem="DSO-25-clz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nR9-P8-X8h"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="chatTableView" destination="DSO-25-clz" id="Gy8-iv-Syf"/>
+                        <outlet property="chatTableViewBottomConstraint" destination="JeU-mD-rJV" id="2eX-fB-ywA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="64" y="79"/>
+            <point key="canvasLocation" x="63.768115942028992" y="78.348214285714278"/>
         </scene>
     </scenes>
     <resources>

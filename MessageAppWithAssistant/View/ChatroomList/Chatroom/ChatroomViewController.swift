@@ -12,6 +12,7 @@ import Realm
 
 class ChatroomViewController: UIViewController {
     @IBOutlet weak var chatTableView: UITableView!
+    @IBOutlet weak var chatTableViewBottomConstraint: NSLayoutConstraint!
     var cancellables = Set<AnyCancellable>()
     
     var roomInfo: RoomItem? {
@@ -19,13 +20,22 @@ class ChatroomViewController: UIViewController {
             navigationItem.title = roomInfo!.roomName
             // チャット内容のゲット
             self.viewModel.tryToGetChatData(roomId: self.roomInfo!.roomId, start: 0, count: 30)
+            chatInputComponent.roomInfo = self.roomInfo
         }
     }
 
     var viewModel = ChatroomViewModel()
 
+    var chatInputComponent: ChatInputComponent = {
+        let view = ChatInputComponent()
+        view.frame = .init(x: 0, y: 0, width: view.frame.width, height: 100)
+        return view
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.viewModel.messageListener.listenningMessage()
 
         self.viewModel.delegate = self
         self.chatTableView.dataSource = self
@@ -36,7 +46,46 @@ class ChatroomViewController: UIViewController {
 
         self.chatTableView.estimatedRowHeight = 90
         self.chatTableView.rowHeight = UITableView.automaticDimension
+
+        self.chatTableViewBottomConstraint.constant = -((inputAccessoryView?.frame.height ?? 0))
+        view.layoutIfNeeded()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    //MARK: KeyBoard
+    @objc func keyboardWillShow(notification: NSNotification) {
+        let userInfo = notification.userInfo!
+        let rect = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        guard let keyboardHeight = rect?.size.height else {
+            return
+        }
+
+        self.chatTableViewBottomConstraint.constant = -(keyboardHeight + 0) //(inputAccessoryView?.frame.height ?? 0))
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        self.chatTableViewBottomConstraint.constant = 0// -((inputAccessoryView?.frame.height ?? 0))
+    }
+
+    override var inputAccessoryView: UIView? {
+        get {
+            return chatInputComponent
+        }
+    }
+
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+
+    // 枠外タップでキーボードを閉じる処理
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
 }
 
 extension ChatroomViewController: UITableViewDelegate {
@@ -52,6 +101,7 @@ extension ChatroomViewController: UITableViewDataSource {
         let myUserId = UserDefaults.standard.string(forKey: "userId")
 
         let currentChatData = self.viewModel.chatList[indexPath.row]
+
 
         if currentChatData.sendUserId != myUserId {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell", for: indexPath) as! ChatTableViewCell
