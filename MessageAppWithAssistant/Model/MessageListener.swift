@@ -8,6 +8,13 @@
 import Foundation
 
 class MessageListener {
+    var chat: Chat?
+
+    func injectChatModel(chat: Chat) {
+        self.chat = chat
+        print("MessageListerner: injected chat model")
+    }
+
     func listenningMessage() {
         webSocketConnecter.webSocketTask.receive { [weak self] result in
             print("///////////////////////////\(result)")
@@ -25,16 +32,44 @@ class MessageListener {
                             print("Received! text: \(text)")
                             print(type(of: text.data(using: .utf8)))
 
-                            //guard let receiveMessage = try? JSONDecoder().decode(ReceiveMessage.self, from:  text.data(using: .utf8)!) else {
-                              //  fatalError("Failed to decode from JSON.")
-                            //}
 
-                            //print(receiveMessage)
-                        /*
+                        guard let receiveMessage = try? JSONSerialization.jsonObject(with: text.data(using: .utf8)!, options: []) as? [String: Any] else {
+                            fatalError("Failed to decode from JSON.")
+                        }
+
+                        print("receiveMessage Sting Any:\(receiveMessage)")
+
+                        print(receiveMessage["contents"])
+
+                        let resultResponse = ReceiveMessage(
+                            roomId: receiveMessage["roomId"] as! String,
+                            chatId: receiveMessage["chatId"] as! String,
+                            sendUserId: receiveMessage["sendUserId"] as! String,
+                            contentsType: receiveMessage["contentsType"] as! String,
+                            contents: receiveMessage["contents"] as! String,
+                            sendTime: receiveMessage["sendTime"] as! Double
+                        )
+
+                        if self?.chat != nil {
                             DispatchQueue.main.async {
-                                self!.contentLabel.text! =  self!.contentLabel.text!+"\n \(text)"
+                                self?.chat?.chatList.append(ChatItem(
+                                        chatId: resultResponse.chatId,
+                                        sendUserId: resultResponse.sendUserId,
+                                        contentsType: resultResponse.contentsType,
+                                        contents: resultResponse.contents,
+                                        sendTime: resultResponse.sendTime
+                                    )
+                                )
                             }
-                         */
+
+
+                            print("chatListに要素追加OK")
+                        } else {
+                            print("chatListに要素追加失敗")
+                        }
+
+                        
+
                         case .data(let data):
                             print("Received! binary: \(data)")
                         @unknown default:
@@ -55,7 +90,7 @@ class MessageListener {
         var sendUserId: String
         var contentsType: String
         var contents: String
-        var sendTime: String
+        var sendTime: Double
     }
 }
 

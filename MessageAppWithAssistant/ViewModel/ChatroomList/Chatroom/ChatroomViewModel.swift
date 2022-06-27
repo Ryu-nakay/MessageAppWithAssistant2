@@ -50,6 +50,9 @@ class ChatroomViewModel: UseActivityIndicator {
                 }
             })
             .store(in: &self.cancellables)
+
+        messageListener.injectChatModel(chat: self.chat)
+        print("ChatroomViewModel injected chat model")
     }
 
     func onTapSendButton(roomId: String, contents: String) {
