@@ -10,7 +10,7 @@ import Combine
 import UIKit
 
 class SignupViewModel: UseActivityIndicator, ViewTransition {
-    var delegate: UIViewController?
+    var viewController: UIViewController?
 
     // ローディング中フラグ
     @Published var isLoading: Bool = false
@@ -73,7 +73,7 @@ extension SignupViewModel {
         self.$isLogin.sink(receiveValue: { value in
             if value {
                 // ログインしたなら初期設定画面へ遷移
-                self.transitionToInitialSettingView()
+                self.transitionToInitialSettingView(viewController: self.viewController!)
             }
         })
         .store(in: &cancellables)
@@ -92,7 +92,7 @@ extension SignupViewModel {
         if password != confirmPassword {
             let alert = UIAlertController(title: "エラー", message: "パスワードと再入力パスワードの値が異なります。", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
-            self.delegate!.present(alert, animated: true, completion: nil)
+            self.viewController!.present(alert, animated: true, completion: nil)
         } else {
             // サインアップの実行
             self.loginModel.tryToSignup(email: email, password: password)
@@ -101,6 +101,6 @@ extension SignupViewModel {
 
     // ログインテキストボタンの処理
     func onTapLoginTextButton() {
-        self.delegate?.dismiss(animated: true)
+        self.viewController!.dismiss(animated: true)
     }
 }

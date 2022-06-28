@@ -10,7 +10,7 @@ import UIKit
 import Combine
 
 class InitialSettingViewModel: UseActivityIndicator, ViewTransition {
-    var delegate: UIViewController?
+    var viewController: UIViewController?
     
     // UseActivityIndicatorで使う
     var activityIndicatorView = UIActivityIndicatorView()
@@ -50,7 +50,7 @@ class InitialSettingViewModel: UseActivityIndicator, ViewTransition {
                 receiveValue: { value in
                     if value == true {
                         // チャットルームへ遷移
-                        self.transitionToChatroomListView()
+                        self.transitionToChatroomListView(viewController: self.viewController!)
                     }
                 }
             )

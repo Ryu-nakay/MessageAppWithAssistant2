@@ -18,8 +18,7 @@ class InitialSettingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel.delegate = self
-        self.viewModel.delegate = self
+        self.viewModel.viewController = self
 
         self.viewModel.initActivityIndicatorView(viewController: self)
     }

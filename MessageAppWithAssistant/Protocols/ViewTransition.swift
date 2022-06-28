@@ -9,40 +9,34 @@ import Foundation
 import UIKit
 
 protocol ViewTransition {
-    // ViewController
-    var delegate: UIViewController? { get set }
-    // ChatroomListViewへの遷移
-    func transitionToChatroomListView()
-    // サインアップ画面への遷移
-    func transitionToSignupView()
     
 }
 
 extension ViewTransition {
     // ChatroomListViewへの遷移
-    func transitionToChatroomListView() {
+    func transitionToChatroomListView(viewController: UIViewController) {
         let storyboard: UIStoryboard = UIStoryboard(name: "MainTabBar", bundle: nil)
         let nextView = storyboard.instantiateViewController(withIdentifier: "TabBarView") as! UITabBarController
-        self.delegate!.present(nextView, animated: false, completion: nil)
+        viewController.present(nextView, animated: false, completion: nil)
 
         webSocketConnecter.connect()
     }
 
     // サインアップ画面への遷移
-    func transitionToSignupView() {
+    func transitionToSignupView(viewController: UIViewController) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Signup", bundle: nil)
         let nextView = storyboard.instantiateViewController(withIdentifier: "SignupView") as! SignupViewController
-        self.delegate!.present(nextView, animated: true, completion: nil)
+        viewController.present(nextView, animated: true, completion: nil)
     }
 
     // 初期設定画面への遷移
-    func transitionToInitialSettingView() {
+    func transitionToInitialSettingView(viewController: UIViewController) {
         let storyboard: UIStoryboard = UIStoryboard(name: "InitialSetting", bundle: nil)
         let nextView = storyboard.instantiateViewController(withIdentifier: "InitialSettingView") as! InitialSettingViewController
-        self.delegate!.present(nextView, animated: true, completion: nil)
+        viewController.present(nextView, animated: true, completion: nil)
     }
 
-    func dismiss(animated: Bool) {
-        self.delegate!.dismiss(animated: animated)
+    func dismiss(viewController: UIViewController,animated: Bool) {
+        viewController.dismiss(animated: animated)
     }
 }

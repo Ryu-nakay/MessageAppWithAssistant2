@@ -30,7 +30,7 @@ class SignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // ViewTransition
-        self.viewModel.delegate = self
+        self.viewModel.viewController = self
         self.viewModel.initActivityIndicatorView(viewController: self)
 
         self.passwordWarningLabel.text = ""

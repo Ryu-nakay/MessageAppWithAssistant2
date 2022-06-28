@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // TransitionViewProtocol
-        self.viewModel.delegate = self
+        self.viewModel.viewController = self
         // アクティビティインジケータの初期化
         self.viewModel.initActivityIndicatorView(viewController: self)
 

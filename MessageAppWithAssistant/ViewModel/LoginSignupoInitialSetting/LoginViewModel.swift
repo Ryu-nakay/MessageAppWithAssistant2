@@ -11,7 +11,7 @@ import Combine
 
 
 class LoginViewModel: UseActivityIndicator, ViewTransition {
-    var delegate: UIViewController?
+    var viewController: UIViewController?
     
     // ローディングフラグ
     @Published var isLoading: Bool = false
@@ -57,9 +57,9 @@ class LoginViewModel: UseActivityIndicator, ViewTransition {
             .sink( receiveValue: { value in
                 if value {
                     if self.hasInformation {
-                        self.transitionToChatroomListView()
+                        self.transitionToChatroomListView(viewController: self.viewController!)
                     } else {
-                        self.transitionToInitialSettingView()
+                        self.transitionToInitialSettingView(viewController: self.viewController!)
                     }
                 }
             })
@@ -73,7 +73,7 @@ class LoginViewModel: UseActivityIndicator, ViewTransition {
 
     // サインアップテキストボタンの処理
     func onTapSignupTextButton() {
-        self.transitionToSignupView()
+        self.transitionToSignupView(viewController: self.viewController!)
     }
 }
 
