@@ -28,9 +28,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         // TransitionViewProtocol
         self.viewModel.delegate = self
-        self.viewModel.delegate = self
         // アクティビティインジケータの初期化
-        self.viewModel.initActivityIndicatorView()
+        self.viewModel.initActivityIndicatorView(viewController: self)
 
         self.viewModel.$isPasswordSecret
             .sink(

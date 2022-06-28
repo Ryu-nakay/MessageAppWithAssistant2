@@ -13,6 +13,8 @@ var webSocketConnecter = WebSocketConnecter()
 struct WebSocketConnecter {
     let webSocketTask = URLSession(configuration: .default).webSocketTask(with: URL(string: "wss://cu4v0xfnsb.execute-api.us-west-1.amazonaws.com/production")!)
 
+    var messageListener = MessageListener()
+
     func connect() {
         webSocketTask.resume()
 
@@ -34,6 +36,8 @@ struct WebSocketConnecter {
                     print(error)  // some error handling
                 } else {
                     print("my infomation was sent!")
+                    // リスニングの開始
+                    self.messageListener.listenningMessage()
                 }
             }
         } catch let error {

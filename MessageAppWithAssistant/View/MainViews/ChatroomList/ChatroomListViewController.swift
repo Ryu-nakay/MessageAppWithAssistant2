@@ -21,7 +21,7 @@ class ChatroomListViewController: UIViewController {
         self.viewModel.delegate = self
 
         // アクティビティインジケータの初期化
-        self.viewModel.initActivityIndicatorView()
+        self.viewModel.initActivityIndicatorView(viewController: self)
 
         // ↓追加　<tableview初期設定>
         self.roomListTableView.frame = view.frame

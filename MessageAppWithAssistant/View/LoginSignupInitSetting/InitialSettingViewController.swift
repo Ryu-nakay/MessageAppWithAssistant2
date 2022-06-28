@@ -21,7 +21,7 @@ class InitialSettingViewController: UIViewController {
         self.viewModel.delegate = self
         self.viewModel.delegate = self
 
-        self.viewModel.initActivityIndicatorView()
+        self.viewModel.initActivityIndicatorView(viewController: self)
     }
 
     @IBAction func onTapSaveButton(_ sender: Any) {

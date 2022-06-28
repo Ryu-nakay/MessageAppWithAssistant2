@@ -16,8 +16,9 @@ class ChatroomViewModel: UseActivityIndicator {
 
     var chat = Chat()
     var messageSender = MessageSender()
-    var messageListener = MessageListener()
     var userData = UserData()
+
+    weak var view: ChatroomViewController?
 
     // ローディングフラグ
     @Published var isLoading: Bool = false
@@ -46,13 +47,35 @@ class ChatroomViewModel: UseActivityIndicator {
                 self.chatList = receiveChat
                 let tempDelegate = self.delegate as? ChatroomViewController
                 if let _ = tempDelegate {
-                    tempDelegate!.chatTableView.reloadData()
+                    DispatchQueue.main.async {
+                        tempDelegate!.chatTableView.reloadData()
+                        let indexPath = IndexPath(row: self.chat.chatList.count-1, section: 0)
+                        tempDelegate?.chatTableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.bottom, animated: false)
+                    }
                 }
             })
             .store(in: &self.cancellables)
 
-        messageListener.injectChatModel(chat: self.chat)
-        print("ChatroomViewModel injected chat model")
+        webSocketConnecter.messageListener.listenResultPublisher
+            .sink(receiveValue: { receiveMessage in
+                print(receiveMessage.contents)
+                if receiveMessage.roomId == self.view?.roomInfo?.roomId {
+                    print("この部屋のメッセージ")
+                    self.chat.chatList.append(ChatItem(
+                        chatId: receiveMessage.chatId,
+                        sendUserId: receiveMessage.sendUserId,
+                        contentsType: receiveMessage.contentsType,
+                        contents: receiveMessage.contents,
+                        sendTime: receiveMessage.sendTime
+                    ))
+                } else {
+                    print("\(receiveMessage.roomId)")
+                    print("\(self.view?.roomInfo?.roomId)")
+                    print("違う部屋のメッセージ")
+                }
+            })
+            .store(in: &self.cancellables)
+
     }
 
     func onTapSendButton(roomId: String, contents: String) {

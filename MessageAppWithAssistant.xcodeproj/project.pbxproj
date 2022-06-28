@@ -175,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				EF5DB4F328582FBD00FEA279 /* LoginSignupInitSetting */,
-				EF5DB4F128582F7300FEA279 /* ChatroomList */,
+				EF75282B286AC60D0054231C /* MainViews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,8 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				EF82AE3B2858393A0071F456 /* LoginSignupoInitialSetting */,
-				EF82AE3C285839520071F456 /* ChatroomList */,
-				EFFCAE15284DCCD700831926 /* Protocols */,
+				EF75282E286AC6A60054231C /* Main */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -201,7 +200,6 @@
 				EF7D80D3286564610042692C /* WebSocketConnecter.swift */,
 				EF7D80D1286561700042692C /* MessageSender.swift */,
 				EF7D80D528657FAA0042692C /* MessageListener.swift */,
-				EFB3747B284EDC49001D59AE /* Protoclos */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -237,9 +235,8 @@
 		EF5DB4F128582F7300FEA279 /* ChatroomList */ = {
 			isa = PBXGroup;
 			children = (
-				EF08B0BE2856FFAA004DB3E6 /* MainTabBarController.swift */,
 				EF554692284B5A92006372BA /* ChatroomListViewController.swift */,
-				EF5DB4E62858212C00FEA279 /* ChatroomListTableViewCell.swift */,
+				EF75282C286AC6650054231C /* Components */,
 				EF5DB4F228582FB000FEA279 /* Chatroom */,
 			);
 			path = ChatroomList;
@@ -249,9 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				EF5DB4EF28582F6C00FEA279 /* ChatroomViewController.swift */,
-				EF82AE4228585CAA0071F456 /* ChatTableViewCell.swift */,
-				EF8B6CDC285CACA000DCC6D2 /* MyChatTableViewCell.swift */,
-				EFE637692861687100E9D7A5 /* ChatInputComponent.swift */,
+				EF75282D286AC6760054231C /* Components */,
 			);
 			path = Chatroom;
 			sourceTree = "<group>";
@@ -264,6 +259,41 @@
 				EFB37480284EEB05001D59AE /* InitialSettingViewController.swift */,
 			);
 			path = LoginSignupInitSetting;
+			sourceTree = "<group>";
+		};
+		EF75282B286AC60D0054231C /* MainViews */ = {
+			isa = PBXGroup;
+			children = (
+				EF08B0BE2856FFAA004DB3E6 /* MainTabBarController.swift */,
+				EF5DB4F128582F7300FEA279 /* ChatroomList */,
+			);
+			path = MainViews;
+			sourceTree = "<group>";
+		};
+		EF75282C286AC6650054231C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EF5DB4E62858212C00FEA279 /* ChatroomListTableViewCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EF75282D286AC6760054231C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EF82AE4228585CAA0071F456 /* ChatTableViewCell.swift */,
+				EF8B6CDC285CACA000DCC6D2 /* MyChatTableViewCell.swift */,
+				EFE637692861687100E9D7A5 /* ChatInputComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EF75282E286AC6A60054231C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EF82AE3C285839520071F456 /* ChatroomList */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		EF82AE3B2858393A0071F456 /* LoginSignupoInitialSetting */ = {
@@ -304,13 +334,6 @@
 			path = Chatroom;
 			sourceTree = "<group>";
 		};
-		EFB3747B284EDC49001D59AE /* Protoclos */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protoclos;
-			sourceTree = "<group>";
-		};
 		EFCD61662849BCCF00509C0D = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +360,7 @@
 				EF554689284B5482006372BA /* View */,
 				EF55468A284B5552006372BA /* ViewModel */,
 				EF55468B284B555C006372BA /* Model */,
+				EFFCAE15284DCCD700831926 /* Protocols */,
 				EFCD61722849BCCF00509C0D /* AppDelegate.swift */,
 				EFCD61742849BCCF00509C0D /* SceneDelegate.swift */,
 				EF4BEAB62856CEE000282DC4 /* Storyboard */,

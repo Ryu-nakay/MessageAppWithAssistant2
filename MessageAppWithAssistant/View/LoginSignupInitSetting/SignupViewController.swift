@@ -31,8 +31,7 @@ class SignupViewController: UIViewController {
         super.viewDidLoad()
         // ViewTransition
         self.viewModel.delegate = self
-
-        self.viewModel.delegate = self
+        self.viewModel.initActivityIndicatorView(viewController: self)
 
         self.passwordWarningLabel.text = ""
         self.confirmPasswordWarningLabel.text = ""

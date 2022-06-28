@@ -10,11 +10,7 @@ import Combine
 import UIKit
 
 class SignupViewModel: UseActivityIndicator, ViewTransition {
-    var delegate: UIViewController? {
-        didSet {
-            self.initActivityIndicatorView()
-        }
-    }
+    var delegate: UIViewController?
 
     // ローディング中フラグ
     @Published var isLoading: Bool = false

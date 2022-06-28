@@ -35,9 +35,8 @@ class ChatroomViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.viewModel.messageListener.listenningMessage()
-
         self.viewModel.delegate = self
+        self.viewModel.view = self
         self.chatTableView.dataSource = self
         self.chatTableView.delegate = self
 
