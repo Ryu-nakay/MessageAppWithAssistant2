@@ -10,6 +10,7 @@ import UIKit
 class ChatInputComponent: UIView {
 
     @IBOutlet weak var inputTextView: UITextView!
+    @IBOutlet weak var inputTextViewHeight: NSLayoutConstraint!
     @IBOutlet weak var sendButton: NSLayoutConstraint!
 
     var roomInfo: RoomItem?
@@ -22,7 +23,7 @@ class ChatInputComponent: UIView {
         inputTextView.layer.cornerRadius = 10
         inputTextView.layer.borderColor = UIColor.blue.cgColor
         inputTextView.layer.borderWidth = 1
-        autoresizingMask = .flexibleHeight
+        // autoresizingMask = .flexibleHeight
 
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.blue.cgColor
@@ -35,7 +36,7 @@ class ChatInputComponent: UIView {
         guard let view = nib.instantiate(withOwner: self, options: nil).first as? UIView else { return }
 
         view.frame = self.bounds
-        view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        // view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         self.addSubview(view)
     }
 
@@ -43,9 +44,11 @@ class ChatInputComponent: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    /*
     override var intrinsicContentSize: CGSize {
         return .zero
     }
+     */
 
 
     @IBAction func onTapSendButton(_ sender: Any) {

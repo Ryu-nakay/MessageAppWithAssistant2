@@ -15,27 +15,21 @@ class ChatroomViewController: UIViewController {
     @IBOutlet weak var chatTableViewBottomConstraint: NSLayoutConstraint!
     var cancellables = Set<AnyCancellable>()
 
-    var chatInputComponentConstraints = [NSLayoutConstraint]()
 
-    var currentChatInputComponentStringLength = 0
-    var currentChatInputComponentLineCount = 0
+    @IBOutlet weak var inputComponentsView: UIView!
+    @IBOutlet weak var chatInputTextView: UITextView!
+    @IBOutlet weak var chatInputTextViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var chatInputSendButton: UIButton!
     
     var roomInfo: RoomItem? {
         didSet {
             navigationItem.title = roomInfo!.roomName
             // チャット内容のゲット
             self.viewModel.tryToGetChatData(roomId: self.roomInfo!.roomId, start: 0, count: 30)
-            chatInputComponent.roomInfo = self.roomInfo
         }
     }
 
     var viewModel = ChatroomViewModel()
-
-    var chatInputComponent: ChatInputComponent = ChatInputComponent() {
-        didSet {
-            chatInputComponent.frame = .init(x: 0, y: 0, width: view.frame.width, height: 100)
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +38,7 @@ class ChatroomViewController: UIViewController {
         self.viewModel.view = self
         self.chatTableView.dataSource = self
         self.chatTableView.delegate = self
-
-        self.chatInputComponent.inputTextView.delegate = self
+        self.chatInputTextView.delegate = self
 
         self.chatTableView.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: "ChatTableViewCell")
         self.chatTableView.register(UINib(nibName: "MyChatTableViewCell", bundle: nil), forCellReuseIdentifier: "MyChatTableViewCell")
@@ -53,47 +46,13 @@ class ChatroomViewController: UIViewController {
         self.chatTableView.estimatedRowHeight = 90
         self.chatTableView.rowHeight = UITableView.automaticDimension
 
-        self.chatTableViewBottomConstraint.constant = -((inputAccessoryView?.frame.height ?? 0))
+        self.chatInputTextView.layer.cornerRadius = 10
+        self.chatInputTextView.layer.borderColor = UIColor.blue.cgColor
+        self.chatInputTextView.layer.borderWidth = 1
 
-        
-        // 入力部の高さ制限 (バグあり)
-        NotificationCenter.default.publisher(for: UITextView.textDidChangeNotification, object: self.chatInputComponent.inputTextView)
-            .map { ($0.object as? UITextView)?.text  ?? "" }
-            .eraseToAnyPublisher()
-            .sink(receiveValue: { input in
+        self.inputComponentsView.layer.borderWidth = 1
+        self.inputComponentsView.layer.borderColor = UIColor.blue.cgColor
 
-                print("行数\(input.numberOfOccurrences(of: "\n"))")
-
-                if input.numberOfOccurrences(of: "\n") == 5 {
-                    if input.count < self.currentChatInputComponentStringLength {
-                        self.chatInputComponentConstraints.map({
-                            $0.isActive = false
-                        })
-                    } else {
-                        self.chatInputComponentConstraints.append(self.chatInputComponent.inputTextView.heightAnchor.constraint(equalToConstant: self.chatInputComponent.inputTextView.frame.height))
-                        self.chatInputComponentConstraints.map({
-                            $0.isActive = true
-                        })
-                    }
-                }
-
-                self.chatInputComponentConstraints.map({
-                    self.chatInputComponent.inputTextView.isScrollEnabled = ($0.isActive == true)
-                })
-
-
-                print("//////////////////////////////////////////////////")
-                print("\(self.inputAccessoryView?.constraints.count)")
-                self.inputAccessoryView?.constraints.map({
-                    print("\($0)")
-                })
-                print("isScrollEnabled: \(self.chatInputComponent.inputTextView.isScrollEnabled)")
-                print("chatInputTextView's height : \(self.chatInputComponent.inputTextView.frame.height)")
-
-                self.currentChatInputComponentStringLength = input.count
-                self.currentChatInputComponentLineCount = self.chatInputComponent.inputTextView.numberOfLines
-            })
-            .store(in: &cancellables)
 
         view.layoutIfNeeded()
     }
@@ -107,25 +66,21 @@ class ChatroomViewController: UIViewController {
     @objc func keyboardWillShow(notification: NSNotification) {
         let userInfo = notification.userInfo!
         let rect = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-        guard let keyboardHeight = rect?.size.height else {
-            return
-        }
 
-        self.chatTableViewBottomConstraint.constant = -(keyboardHeight + 0) //(inputAccessoryView?.frame.height ?? 0))
+        let duration: TimeInterval = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
+        UIView.animate(withDuration: duration, animations: {
+            let transform = CGAffineTransform(translationX: 0, y: -rect!.size.height)
+                self.view.transform = transform
+            },completion:nil)
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        self.chatTableViewBottomConstraint.constant = 0// -((inputAccessoryView?.frame.height ?? 0))
-    }
-
-    override var inputAccessoryView: UIView? {
-        get {
-            return chatInputComponent
-        }
-    }
-
-    override var canBecomeFirstResponder: Bool {
-        return true
+        let userInfo = notification.userInfo!
+        let duration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! Double)
+        UIView.animate(withDuration: duration, animations:{
+            self.view.transform = CGAffineTransform.identity
+                },
+                    completion:nil)
     }
 
     // 枠外タップでキーボードを閉じる処理
@@ -133,6 +88,10 @@ class ChatroomViewController: UIViewController {
         self.view.endEditing(true)
     }
 
+    @IBAction func onTapChatInputSendButton(_ sender: Any) {
+        var messageSender = MessageSender()
+        messageSender.send(roomId: self.roomInfo!.roomId, contents: self.chatInputTextView.text)
+    }
 }
 
 extension ChatroomViewController: UITableViewDelegate {
@@ -158,7 +117,7 @@ extension ChatroomViewController: UITableViewDataSource {
             formatter.dateFormat = "HH:mm"
             cell.dateLabel.text = "\(formatter.string(from: date as Date))"
 
-            // 名前の適応
+            // 名前の適用
             let realm = try! Realm()
             realm.objects(UserInfo.self).filter(NSPredicate(format: "userId == %@", currentChatData.sendUserId))
                 .publisher
@@ -186,15 +145,18 @@ extension ChatroomViewController: UITableViewDataSource {
 }
 
 extension ChatroomViewController: UITextViewDelegate {
-    /*
-    func textViewDidChange(textView: UITextView) {
+    func textViewDidChange(_ textView: UITextView) {
         let maxHeight = 100.0  // 入力フィールドの最大サイズ
-        if(chatInputComponent.inputTextView.frame.size.height.native < maxHeight) {
-            let size:CGSize = chatInputComponent.inputTextView.sizeThatFits(chatInputComponent.inputTextView.frame.size)
-            messageTextViewHeight.constant = size.height
+        print("\(chatInputTextView.frame.size.height.native)")
+
+        if(chatInputTextView.frame.size.height.native <= maxHeight) {
+            let size:CGSize = chatInputTextView.sizeThatFits(chatInputTextView.frame.size)
+            if(size.height < maxHeight) {
+                chatInputTextViewHeight.constant = size.height
+                print("textViewDidChange is setting \(size.height)")
+            }
         }
     }
-     */
 }
 
 
