@@ -28,6 +28,8 @@ class MessageListener {
                             fatalError("Failed to decode from JSON.")
                         }
 
+                        print(receiveMessage)
+
                         let resultResponse = ReceiveMessage(
                             roomId: receiveMessage["roomId"] as! String,
                             chatId: receiveMessage["chatId"] as! String,
