@@ -35,9 +35,17 @@ extension SettingViewController: UITableViewDataSource {
     // 各行に表示するセルを返す
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "SettingCell", for: indexPath)
-        cell.textLabel?.text = self.viewModel.settingItemsArray[indexPath.row].rawValue
-        cell.textLabel?.textColor = self.viewModel.settingItemsArray[indexPath.row].itemTextColor(itemType: self.viewModel.settingItemsArray[indexPath.row])
+        let currentSettingItem = self.viewModel.settingItemsArray[indexPath.row]
+        cell.textLabel?.text = currentSettingItem.rawValue
+        cell.textLabel?.textColor = currentSettingItem.itemTextColor()
         return cell
+    }
+
+    // タップ時の処理
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currentSettingItem = self.viewModel.settingItemsArray[indexPath.row]
+        currentSettingItem.itemsAction(viewController: self)
+        self.settingTableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
