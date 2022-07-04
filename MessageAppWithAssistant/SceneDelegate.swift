@@ -17,6 +17,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+
+        let windows = UIWindow(windowScene: scene as! UIWindowScene)
+        self.window = windows
+        windows.makeKeyAndVisible()
+
+
+        let sb = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let chatroomsb = UIStoryboard(name: "MainTabBar", bundle: Bundle.main)
+
+        // 自動ログイン機能
+        if let _ = UserDefaults.standard.string(forKey: "userId") {
+            let vc = chatroomsb.instantiateViewController(withIdentifier: "TabBarView")
+            window!.rootViewController = vc
+            webSocketConnecter.connect()
+        } else {
+            let vc = sb.instantiateViewController(withIdentifier: "LoginView")
+            window!.rootViewController = vc
+        }
+
+
+        /*
+        if 条件式 {
+            let vc = sb.instantiateViewController(withIdentifier: ストーリーボードID)
+            window!.rootViewController = vc
+        } else {
+            let vc = sb.instantiateViewController(withIdentifier: ストーリーボードID)
+            window!.rootViewController = vc
+        }
+         */
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -46,7 +75,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
 

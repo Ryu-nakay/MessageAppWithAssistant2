@@ -23,6 +23,8 @@ class LoginModel {
     private var cancellables = Set<AnyCancellable>()
 
 
+
+
 }
 
 
@@ -31,8 +33,6 @@ extension LoginModel {
     // ログイン機能
     func tryToLogin(email: String, password: String) {
         self.isLoading = true
-
-
         tryToLoginPubliher(email: email, password: password)
             .sink(receiveValue: { result in
                 DispatchQueue.main.async {

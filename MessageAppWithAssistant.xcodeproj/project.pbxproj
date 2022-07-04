@@ -19,6 +19,9 @@
 		EF08B0C1285705E4004DB3E6 /* ChatroomList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF08B0C0285705E4004DB3E6 /* ChatroomList.swift */; };
 		EF3251FB284F0FD7001A3263 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3251FA284F0FD7001A3263 /* SettingModel.swift */; };
 		EF3251FD284F132A001A3263 /* InitialSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3251FC284F132A001A3263 /* InitialSettingViewModel.swift */; };
+		EF39A9AA2872B3F5009162C6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39A9A92872B3F5009162C6 /* SettingViewController.swift */; };
+		EF39A9AD2872B813009162C6 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39A9AC2872B813009162C6 /* SettingViewModel.swift */; };
+		EF39A9B02872B85B009162C6 /* SettingItemsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39A9AF2872B85B009162C6 /* SettingItemsEnum.swift */; };
 		EF4BEAB52856CBA100282DC4 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF4BEAB42856CBA100282DC4 /* Signup.storyboard */; };
 		EF4BEAB82856CEFA00282DC4 /* InitialSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF4BEAB72856CEFA00282DC4 /* InitialSetting.storyboard */; };
 		EF4BEABA2856D3D300282DC4 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF4BEAB92856D3D300282DC4 /* MainTabBar.storyboard */; };
@@ -87,6 +90,9 @@
 		EF3251FC284F132A001A3263 /* InitialSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSettingViewModel.swift; sourceTree = "<group>"; };
 		EF3251FE284F14F8001A3263 /* UserDefaultsData.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = UserDefaultsData.md; sourceTree = "<group>"; };
 		EF395688284EF91500A694A7 /* ToDo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ToDo.md; sourceTree = "<group>"; };
+		EF39A9A92872B3F5009162C6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		EF39A9AC2872B813009162C6 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		EF39A9AF2872B85B009162C6 /* SettingItemsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemsEnum.swift; sourceTree = "<group>"; };
 		EF4BEAB42856CBA100282DC4 /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 		EF4BEAB72856CEFA00282DC4 /* InitialSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InitialSetting.storyboard; sourceTree = "<group>"; };
 		EF4BEAB92856D3D300282DC4 /* MainTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBar.storyboard; sourceTree = "<group>"; };
@@ -159,6 +165,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF39A9A82872B3D9009162C6 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				EF39A9A92872B3F5009162C6 /* SettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		EF39A9AB2872B740009162C6 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				EF39A9AC2872B813009162C6 /* SettingViewModel.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		EF39A9AE2872B838009162C6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				EF39A9AF2872B85B009162C6 /* SettingItemsEnum.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		EF4BEAB62856CEE000282DC4 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +296,7 @@
 			children = (
 				EF08B0BE2856FFAA004DB3E6 /* MainTabBarController.swift */,
 				EF5DB4F128582F7300FEA279 /* ChatroomList */,
+				EF39A9A82872B3D9009162C6 /* Setting */,
 			);
 			path = MainViews;
 			sourceTree = "<group>";
@@ -292,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				EF82AE3C285839520071F456 /* ChatroomList */,
+				EF39A9AB2872B740009162C6 /* Setting */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -361,6 +393,7 @@
 				EF55468A284B5552006372BA /* ViewModel */,
 				EF55468B284B555C006372BA /* Model */,
 				EFFCAE15284DCCD700831926 /* Protocols */,
+				EF39A9AE2872B838009162C6 /* Data */,
 				EFCD61722849BCCF00509C0D /* AppDelegate.swift */,
 				EFCD61742849BCCF00509C0D /* SceneDelegate.swift */,
 				EF4BEAB62856CEE000282DC4 /* Storyboard */,
@@ -552,9 +585,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF39A9AA2872B3F5009162C6 /* SettingViewController.swift in Sources */,
 				EF7D80D2286561700042692C /* MessageSender.swift in Sources */,
 				EFFC1AF42849D6C3009C99D8 /* LoginViewController.swift in Sources */,
 				EF55468F284B5722006372BA /* LoginModel.swift in Sources */,
+				EF39A9B02872B85B009162C6 /* SettingItemsEnum.swift in Sources */,
 				EFB37481284EEB05001D59AE /* InitialSettingViewController.swift in Sources */,
 				EF3251FD284F132A001A3263 /* InitialSettingViewModel.swift in Sources */,
 				EFFCAE14284DC6E500831926 /* SignupViewModel.swift in Sources */,
@@ -576,6 +611,7 @@
 				EF089D6128600C75009A4F97 /* UserData.swift in Sources */,
 				EF7D80D4286564610042692C /* WebSocketConnecter.swift in Sources */,
 				EFCD61752849BCCF00509C0D /* SceneDelegate.swift in Sources */,
+				EF39A9AD2872B813009162C6 /* SettingViewModel.swift in Sources */,
 				EF089D5D286001D4009A4F97 /* KeyboardValidation.swift in Sources */,
 				EF82AE4428585CAA0071F456 /* ChatTableViewCell.swift in Sources */,
 				EF08B0C1285705E4004DB3E6 /* ChatroomList.swift in Sources */,

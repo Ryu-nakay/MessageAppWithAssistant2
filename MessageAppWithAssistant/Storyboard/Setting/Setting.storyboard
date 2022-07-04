@@ -8,28 +8,41 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Setting View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="SettingViewController" customModule="MessageAppWithAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="設定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsL-nX-LDp">
-                                <rect key="frame" x="151" y="414.5" width="112.5" height="67"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="56"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9UK-7u-Seq">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingCell" id="qc9-jO-nfd">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qc9-jO-nfd" id="bHH-W8-UyK">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="QsL-nX-LDp" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="QHF-QY-K1U"/>
-                            <constraint firstItem="QsL-nX-LDp" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="SxE-v7-AJC"/>
+                            <constraint firstItem="9UK-7u-Seq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Bzh-Vj-nH4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="9UK-7u-Seq" secondAttribute="bottom" id="IYG-Xj-GxU"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9UK-7u-Seq" secondAttribute="trailing" id="OyB-Ll-GuG"/>
+                            <constraint firstItem="9UK-7u-Seq" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="QgV-oa-Cc0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="settingTableView" destination="9UK-7u-Seq" id="WNT-Xk-mPi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

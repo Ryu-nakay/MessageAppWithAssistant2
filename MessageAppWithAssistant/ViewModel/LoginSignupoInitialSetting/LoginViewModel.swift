@@ -58,6 +58,7 @@ class LoginViewModel: UseActivityIndicator, ViewTransition {
                 if value {
                     if self.hasInformation {
                         self.transitionToChatroomListView(viewController: self.viewController!)
+                        webSocketConnecter.connect()
                     } else {
                         self.transitionToInitialSettingView(viewController: self.viewController!)
                     }
