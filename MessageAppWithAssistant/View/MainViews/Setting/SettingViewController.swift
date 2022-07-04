@@ -26,7 +26,6 @@ class SettingViewController: UIViewController {
 }
 
 extension SettingViewController: UITableViewDataSource {
-
     // セクション毎の行数を返す
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.settingItemsArray.count
@@ -49,7 +48,6 @@ extension SettingViewController: UITableViewDataSource {
     }
 }
 
-// テーブルのイベントを管理する
 extension SettingViewController: UITableViewDelegate {
 
 }

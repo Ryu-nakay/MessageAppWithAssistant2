@@ -49,11 +49,23 @@ class ChatroomViewController: UIViewController {
         self.chatInputTextView.layer.cornerRadius = 10
         self.chatInputTextView.layer.borderColor = UIColor.blue.cgColor
         self.chatInputTextView.layer.borderWidth = 1
+        self.chatInputTextView.text = ""
+
+        self.chatInputSendButton.isEnabled = false
 
         self.inputComponentsView.layer.borderWidth = 1
         self.inputComponentsView.layer.borderColor = UIColor.blue.cgColor
 
         view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
+
+        // chatInputTextViewのテキストを購読し、ボタンを制御
+        NotificationCenter.default.publisher(for: UITextView.textDidChangeNotification, object: self.chatInputTextView)
+            .map { ($0.object as? UITextView)?.text ?? "" }
+            .eraseToAnyPublisher()
+            .sink(receiveValue: { input in
+                self.chatInputSendButton.isEnabled = (input.count != 0)
+            })
+            .store(in: &cancellables)
 
         view.layoutIfNeeded()
     }
@@ -87,6 +99,8 @@ class ChatroomViewController: UIViewController {
     @IBAction func onTapChatInputSendButton(_ sender: Any) {
         var messageSender = MessageSender()
         messageSender.send(roomId: self.roomInfo!.roomId, contents: self.chatInputTextView.text)
+        self.chatInputTextView.text = ""
+        self.chatInputSendButton.isEnabled = false
     }
 }
 
@@ -152,38 +166,5 @@ extension ChatroomViewController: UITextViewDelegate {
                 print("textViewDidChange is setting \(size.height)")
             }
         }
-    }
-}
-
-
-
-extension UITextView {
-    var numberOfLines: Int {
-        var computingLineIndex = 0
-        var computingGlyphIndex = 0
-        while computingGlyphIndex < layoutManager.numberOfGlyphs {
-            var lineRange = NSRange()
-            layoutManager.lineFragmentRect(forGlyphAt: computingGlyphIndex, effectiveRange: &lineRange)
-            computingGlyphIndex = NSMaxRange(lineRange)
-            computingLineIndex += 1
-        }
-        if textContainer.maximumNumberOfLines > 0 {
-            return min(textContainer.maximumNumberOfLines, computingLineIndex)
-        } else {
-            return computingLineIndex
-        }
-    }
-}
-
-
-extension String {
-    func numberOfOccurrences(of word: String) -> Int {
-        var count = 0
-        var nextRange = self.startIndex..<self.endIndex
-        while let range = self.range(of: word, options: .caseInsensitive, range: nextRange) {
-            count += 1
-            nextRange = range.upperBound..<self.endIndex
-        }
-        return count
     }
 }

@@ -32,18 +32,22 @@ enum SettingItem: String {
         let alertController = UIAlertController(title: "ログアウトしますか",
                                    message: "再度ログインが必要になります",
                                    preferredStyle: .alert)
+
         alertController.addAction(UIAlertAction(title: "キャンセル",
                                        style: .default,
                                        handler: nil))
+
         alertController.addAction(UIAlertAction(title: "ログアウト",
                                                 style: .destructive) { _ in
             // ログイン情報の削除
             UserDefaults.standard.removeObject(forKey: "userId")
 
+            // ログイン画面へ遷移
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let nextView = storyboard.instantiateViewController(withIdentifier: "LoginView") as! LoginViewController
             viewController.present(nextView, animated: false, completion: nil)
         })
+
         viewController.present(alertController, animated: true)
     }
 }
