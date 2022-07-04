@@ -20,7 +20,7 @@ class ChatroomViewController: UIViewController {
     @IBOutlet weak var chatInputTextView: UITextView!
     @IBOutlet weak var chatInputTextViewHeight: NSLayoutConstraint!
     @IBOutlet weak var chatInputSendButton: UIButton!
-    
+
     var roomInfo: RoomItem? {
         didSet {
             navigationItem.title = roomInfo!.roomName
@@ -53,6 +53,7 @@ class ChatroomViewController: UIViewController {
         self.inputComponentsView.layer.borderWidth = 1
         self.inputComponentsView.layer.borderColor = UIColor.blue.cgColor
 
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
 
         view.layoutIfNeeded()
     }
@@ -81,11 +82,6 @@ class ChatroomViewController: UIViewController {
             self.view.transform = CGAffineTransform.identity
                 },
                     completion:nil)
-    }
-
-    // 枠外タップでキーボードを閉じる処理
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
     }
 
     @IBAction func onTapChatInputSendButton(_ sender: Any) {
